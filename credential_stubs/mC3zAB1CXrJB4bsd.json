@@ -1,0 +1,13 @@
+{
+  "id": "mC3zAB1CXrJB4bsd",
+  "name": "ActiveCampaign account 3",
+  "type": "activeCampaignApi",
+  "data": {
+    "apiUrl": "",
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}
