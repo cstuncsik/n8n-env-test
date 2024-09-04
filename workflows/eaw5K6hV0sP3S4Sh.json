@@ -1,0 +1,589 @@
+{
+  "id": "eaw5K6hV0sP3S4Sh",
+  "name": "My workflow 15",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "aa38dc1b-3053-4abf-9079-1443771a3498",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        520,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 2
+            }
+          ]
+        }
+      },
+      "id": "e5c07713-0dff-4527-a8c9-b01e976159ed",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "packages",
+          "mode": "list",
+          "cachedResultName": "packages"
+        },
+        "returnAll": true,
+        "where": {
+          "values": [
+            {
+              "column": "tracking_status",
+              "condition": "!=",
+              "value": "Delivered"
+            },
+            {
+              "column": "tracking_status",
+              "condition": "IS NULL"
+            }
+          ]
+        },
+        "combineConditions": "OR",
+        "options": {
+          "outputColumns": [
+            "packageClientReferenceId",
+            "shipmentId",
+            "trackingId",
+            "tracking_status",
+            "tracking_events"
+          ]
+        }
+      },
+      "id": "60f35607-3bc7-477b-bb91-0d83171e8066",
+      "name": "Not Yet Delivered",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.3,
+      "position": [
+        1640,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "pickedUp",
+              "stringValue": "={{  }}"
+            },
+            {
+              "name": "lastEvent",
+              "stringValue": "={{  }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "53d814f9-bb16-4f2c-8d45-6a5c9ca81fb8",
+      "name": "Extract PickedUp and LastEvent Time",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        2140,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "packages",
+          "mode": "list",
+          "cachedResultName": "packages"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "packageClientReferenceId": "={{ $json.packageClientReferenceId }}",
+            "tracking_status": "={{ $json.payload.summary.status }}",
+            "tracking_events": "={\"events\": {{ JSON.stringify($json.payload.eventHistory) }} }",
+            "picked_up": "={{ $json.pickedUp }}",
+            "last_event": "={{ $json.lastEvent }}"
+          },
+          "matchingColumns": [
+            "packageClientReferenceId"
+          ],
+          "schema": [
+            {
+              "id": "recno",
+              "displayName": "recno",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "orderId",
+              "displayName": "orderId",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "itemId",
+              "displayName": "itemId",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "boxNumber",
+              "displayName": "boxNumber",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "packageClientReferenceId",
+              "displayName": "packageClientReferenceId",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "orderItem",
+              "displayName": "orderItem",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "object",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "rateDetails",
+              "displayName": "rateDetails",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "object",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "purchaseShippingResult",
+              "displayName": "purchaseShippingResult",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "object",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "purchaseShippingRequestId",
+              "displayName": "purchaseShippingRequestId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "shipmentId",
+              "displayName": "shipmentId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "trackingId",
+              "displayName": "trackingId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "printable_label",
+              "displayName": "printable_label",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "tracking_status",
+              "displayName": "tracking_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "tracking_events",
+              "displayName": "tracking_events",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "object",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "batched_for_shipping",
+              "displayName": "batched_for_shipping",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "batchId",
+              "displayName": "batchId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "picked_up",
+              "displayName": "picked_up",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "delivered",
+              "displayName": "delivered",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "last_event",
+              "displayName": "last_event",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c2d0da02-464d-4c07-a0f3-30c8f098232b",
+      "name": "Update Package Table",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.3,
+      "position": [
+        2460,
+        380
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "amount": 0.1,
+        "unit": "seconds"
+      },
+      "id": "bfb6549e-1424-4b64-a7bf-f8c62e75a475",
+      "name": "Wait2",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        780,
+        380
+      ],
+      "webhookId": "e66e5b79-dc55-4d5f-a00c-4576f61abac0"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n    \"client_id\": \"\",\n    \"client_secret\": \"\",\n    \"grant_type\": \"client_credentials\"\n}",
+        "options": {}
+      },
+      "id": "f6de0940-6097-410a-b66d-4b2ecea648f4",
+      "name": "USPS Access Keys",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        960,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.usps.com/oauth2/v3/token",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_id",
+              "value": "={{ $json.client_id }}"
+            },
+            {
+              "name": "client_secret",
+              "value": "={{ $json.client_secret }}"
+            },
+            {
+              "name": "grant_type",
+              "value": "={{ $json.grant_type }}"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "fullResponse": true
+            }
+          }
+        }
+      },
+      "id": "266372a1-4a26-429d-9a14-f8fbad444dfc",
+      "name": "GET USPS Access Token",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1180,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "access_token",
+              "stringValue": "={{ $json.body.access_token }}"
+            },
+            {
+              "name": "access_cookie",
+              "stringValue": "={{ $json.headers['set-cookie'][0].split(';')[0] }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "1c43b2c3-7476-4465-b39e-a33f82324bd5",
+      "name": "USPS OAuth2 tokens",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1400,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://api.usps.com/tracking/v3/tracking/{{ $json.trackingId }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "expand",
+              "value": "DETAIL"
+            }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('USPS OAuth2 tokens').first().json.access_token }}"
+            },
+            {
+              "name": "Cookie",
+              "value": "={{ $('USPS OAuth2 tokens').first().json.access_cookie }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "options": {
+          "batching": {
+            "batch": {
+              "batchInterval": 2000
+            }
+          }
+        }
+      },
+      "id": "32f73383-c0fd-4335-b8fb-430f39c60f0f",
+      "name": "Get Tracking Info",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1900,
+        380
+      ],
+      "retryOnFail": true,
+      "waitBetweenTries": 3000
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Wait2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Not Yet Delivered": {
+      "main": [
+        [
+          {
+            "node": "Get Tracking Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract PickedUp and LastEvent Time": {
+      "main": [
+        [
+          {
+            "node": "Update Package Table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait2": {
+      "main": [
+        [
+          {
+            "node": "USPS Access Keys",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "USPS Access Keys": {
+      "main": [
+        [
+          {
+            "node": "GET USPS Access Token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GET USPS Access Token": {
+      "main": [
+        [
+          {
+            "node": "USPS OAuth2 tokens",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "USPS OAuth2 tokens": {
+      "main": [
+        [
+          {
+            "node": "Not Yet Delivered",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Tracking Info": {
+      "main": [
+        [
+          {
+            "node": "Extract PickedUp and LastEvent Time",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "cb758212-6dc9-4a0d-8bb2-34a95a170ab3",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

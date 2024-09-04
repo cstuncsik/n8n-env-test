@@ -1,0 +1,52 @@
+{
+  "id": "k3FrxGgQMIRFnpLK",
+  "name": "Test new canvas",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -560,
+        -240
+      ],
+      "id": "f695cfcb-6010-4ad5-84c4-e243d1a31ec3",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -320,
+        -240
+      ],
+      "id": "1a0b31da-881c-42e7-a7e6-ab5690a85448",
+      "name": "Edit Fields"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "bc8bac5e-abce-45d5-b9e3-580867ca47a5",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

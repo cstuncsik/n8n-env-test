@@ -1,0 +1,12 @@
+{
+  "id": "GNCCLCmdCytfwWYV",
+  "name": "Airtable Personal Access Token account 3",
+  "type": "airtableTokenApi",
+  "data": {
+    "accessToken": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

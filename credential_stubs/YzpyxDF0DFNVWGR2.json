@@ -1,0 +1,13 @@
+{
+  "id": "YzpyxDF0DFNVWGR2",
+  "name": "Unnamed credential by admin",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "cstuncsik@vivaldi.net"
+  }
+}

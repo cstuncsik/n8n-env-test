@@ -1,0 +1,291 @@
+{
+  "id": "wrJzEYdQknrZN6G6",
+  "name": "Webhook PairedItem error test",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "86f05bcc-44a4-44f7-b774-7002fc2eddfc",
+        "options": {}
+      },
+      "id": "0ca4d882-6a28-415e-b913-ee64505087a8",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [
+        -100,
+        580
+      ],
+      "webhookId": "86f05bcc-44a4-44f7-b774-7002fc2eddfc"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "e9605092-a127-46ad-9fb3-e671f955f856",
+              "leftValue": "={{ $json.headers.host }}",
+              "rightValue": "asdf",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "6808b673-8901-47a9-9e5f-c41be6b2c263",
+      "name": "If",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        120,
+        580
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "afc22fd8-51ba-4b4b-851d-01f4504b48d5",
+      "name": "No Operation, do nothing",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d65053c-31de-43e8-a870-e7e79d34ca67",
+              "name": "asdf",
+              "value": "={{ $('Webhook').item.json.headers['accept-encoding'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "60ac2f3d-9d4b-480f-9a25-2caa3e1622b4",
+      "name": "Edit Fields1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        900,
+        660
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "74c1f216-ee6b-4735-af65-4cbb8f080b97",
+      "name": "NoOp1",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        460,
+        660
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "73ee3ad1-ba6c-47be-8490-a3b7bd5497c6",
+      "name": "NoOp3",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        660
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "7c907799-a9a6-4a6d-aa32-c2ac69e78dee",
+      "name": "NoOp2",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        680,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d65053c-31de-43e8-a870-e7e79d34ca67",
+              "name": "asdf",
+              "value": "={{ $('Webhook').item.json.headers['accept-encoding'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3abdb9e5-211e-40ae-b043-0c80223430d4",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        1260,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1d65053c-31de-43e8-a870-e7e79d34ca67",
+              "name": "asdf",
+              "value": "={{ $('Webhook').item.json.headers['accept-encoding'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d7799978-a7c7-432f-9943-18f73040c584",
+      "name": "Edit Fields2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.3,
+      "position": [
+        500,
+        880
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "80b675d0-5b2e-4fe2-a2ef-6de4eb7b4f9c",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        740,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "content": "For Error:\n1. Execute \"If\"\n2. Execute \"NoOp2\"\n"
+      },
+      "id": "290406ec-14c2-47b8-abc2-c76ab54c0757",
+      "name": "Sticky Note",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        920
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "No Operation, do nothing",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NoOp1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp1": {
+      "main": [
+        [
+          {
+            "node": "NoOp2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "NoOp3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "NoOp3": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields2": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "e3111863-f478-4668-804f-f3da63bd7d82",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

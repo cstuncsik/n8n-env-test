@@ -1,0 +1,14 @@
+{
+  "id": "sLNREGC9e9W0jsXa",
+  "name": "Unnamed credential 4",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

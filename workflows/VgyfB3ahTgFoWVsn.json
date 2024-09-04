@@ -1,0 +1,15 @@
+{
+  "id": "VgyfB3ahTgFoWVsn",
+  "name": "Test",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "06fb6780-e167-4c68-846f-c66e1d5d16f4",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

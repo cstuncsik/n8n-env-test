@@ -1,0 +1,13 @@
+{
+  "id": "L9d3Jrdg40HL4BKY",
+  "name": "JSON generator",
+  "type": "httpHeaderAuth",
+  "data": {
+    "name": "",
+    "value": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

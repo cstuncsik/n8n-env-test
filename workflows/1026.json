@@ -1,0 +1,86 @@
+{
+  "id": "1026",
+  "name": "Pinned data",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ae8844c0-d11d-4875-a67c-9aef6360d8fb",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.json-generator.com/templates/ATdzNisiKHOB/data",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {}
+      },
+      "id": "58838d44-19e6-4854-a4c1-61b8403901e3",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        800,
+        740
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "15",
+          "name": "JSON generator token"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.json = 1;\n  item.json.newProp = { json: 2 };\n}\n\nreturn $input.all();"
+      },
+      "id": "ed67c87f-fce1-435b-8526-82e36683ee0b",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        800,
+        1040
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 1,
+  "versionId": "d4718d4b-7f7b-4049-8e3a-4aa52a4925e1",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

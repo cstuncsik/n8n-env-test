@@ -1,0 +1,713 @@
+{
+  "id": "1012",
+  "name": "Transporeon - orders - step 3 - process single",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -960,
+        -1020
+      ],
+      "id": "62ef046e-803e-4db7-94d3-07b9a041e999"
+    },
+    {
+      "parameters": {
+        "functionCode": "const body = {\n\t\"tisys\": {\n\t\t\"tour\": {\n\t\t\t\"$\": {\n\t\t\t\t\"id\": \"746395414\"\n\t\t\t},\n\t\t\t\"timestamp\": \"2022-02-17 12:56:49\",\n\t\t\t\"changed\": \"0\",\n\t\t\t\"number\": \"21395952\",\n\t\t\t\"external_transport_number\": \"\",\n\t\t\t\"attachments\": \"\",\n\t\t\t\"tpw_link\": \"https://login.transporeon.com/?jumpToTransport=true&transportId=746395414\",\n\t\t\t\"status\": \"N\",\n\t\t\t\"qualifier\": \"tour.accepted\",\n\t\t\t\"shadow_nto\": \"0\",\n\t\t\t\"partial_accept\": \"0\",\n\t\t\t\"company_id\": \"220931\",\n\t\t\t\"company_name\": \"K+S Minerals und Agriculture GmbH\",\n\t\t\t\"company_address\": \"Bertha-von-Suttner-Str. 7\",\n\t\t\t\"company_zip_address\": \"34131\",\n\t\t\t\"company_city\": \"Kassel\",\n\t\t\t\"company_region\": \"\",\n\t\t\t\"company_country_id\": \"DE\",\n\t\t\t\"disponent_firstname\": \"Matthias\",\n\t\t\t\"disponent_lastname\": \"Kreuzer\",\n\t\t\t\"disponent_phone\": \"+4917612348895\",\n\t\t\t\"disponent_id\": \"9139502\",\n\t\t\t\"carrier_disponent_name\": \"Matthias Kreuzer\",\n\t\t\t\"carrier_disponent_id\": \"0\",\n\t\t\t\"vehicle_id\": \"0\",\n\t\t\t\"vehicle_name\": \"Bischi Trocken Metallboden gedeckt\",\n\t\t\t\"start_date\": \"2022-02-28\",\n\t\t\t\"start_time\": \"00:00:00\",\n\t\t\t\"end_date\": \"2022-03-07\",\n\t\t\t\"end_time\": \"00:00:00\",\n\t\t\t\"owner\": \"KS00\",\n\t\t\t\"start_country_id\": \"DE\",\n\t\t\t\"start_zip\": \"39340\",\n\t\t\t\"start_city\": \"Haldensleben\",\n\t\t\t\"start_region\": \"\",\n\t\t\t\"end_country_id\": \"NL\",\n\t\t\t\"end_zip\": \"8861 NW\",\n\t\t\t\"end_city\": \"Harlingen\",\n\t\t\t\"end_region\": \"\",\n\t\t\t\"price_basic\": \"\",\n\t\t\t\"price_additional1\": \"0.00\",\n\t\t\t\"price_additional2\": \"0.00\",\n\t\t\t\"price_additional3\": \"0.00\",\n\t\t\t\"price_additional1_desc\": \"-\",\n\t\t\t\"price_additional2_desc\": \"-\",\n\t\t\t\"price_additional3_desc\": \"-\",\n\t\t\t\"currency_id\": \"\",\n\t\t\t\"assigned_carrier_id\": \"327944\",\n\t\t\t\"assigned_carrier_name\": \"Cooperatie NPRC u.a.\",\n\t\t\t\"assigned_creditor_number\": \"0006324401\",\n\t\t\t\"carrier_number\": \"\",\n\t\t\t\"weight\": \"1150000\",\n\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\"length\": \"0\",\n\t\t\t\"length_unit\": \"m\",\n\t\t\t\"volume\": \"0\",\n\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\"route\": \"588\",\n\t\t\t\"route_unit\": \"km\",\n\t\t\t\"zone\": \"\",\n\t\t\t\"auction_start_date\": \"\",\n\t\t\t\"auction_start_time\": \"\",\n\t\t\t\"auction_end_date\": \"2022-02-17\",\n\t\t\t\"auction_end_time\": \"11:56:48\",\n\t\t\t\"auction_comment\": \"\",\n\t\t\t\"auction_comment_plain_text\": \"\",\n\t\t\t\"plant\": \"KS00\",\n\t\t\t\"delivery_group_number\": \"\",\n\t\t\t\"tkn_loading_station\": \"\",\n\t\t\t\"tkn_weight\": \"1150000\",\n\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\"pin\": \"\",\n\t\t\t\"tsm_light_login_link\": \"https://tsm.transporeon.com/?token=6EkqpRwROAd73OxIbKgOLLsWnOe0D8NIfNdLgWQxa3UnWLN1EBxB4LgW6hhZiHcN\",\n\t\t\t\"comment\": \"<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Allgemeine_Transportbedingungen_LKW_der_KplusS_Gruppe_DE.pdf\\\">AllgemeineTransportbedingungen LKW der K+S Gruppe</a>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/General_Terms_and_Conditions_for_Truck_Transports_of_KplusS_Group_EN.pdf\\\">GeneralTerms and Conditions for Truck Transports of K+S Group<a/>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Conditions_generales_de_vente_des_camions_de_transport_dugroupe_KplusS_FR.pdf\\\">Conditions G�n�rales de Transport routier applicables dans le Groupe K+S<a/>.__NEWLINE__\",\n\t\t\t\"comment_plain_text\": \"AllgemeineTransportbedingungen LKW der K+S Gruppe.__NEWLINE__GeneralTerms and Conditions for Truck Transports of K+S Group.__NEWLINE__Conditions G�n�rales de Transport routier applicables dans le Groupe K+S.__NEWLINE__\",\n\t\t\t\"internal_comment\": \"\",\n\t\t\t\"parameters\": {\n\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\"qualifier\": \"transportation.planning.point\",\n\t\t\t\t\t\"value\": \"KS00\",\n\t\t\t\t\t\"description\": \"K+S OU Europe+\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.amount.of.pallets\",\n\t\t\t\t\t\"value\": \"0\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.servicelevel\",\n\t\t\t\t\t\"value\": \"Ladung\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.param.process\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.transport.begin\",\n\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.transport.end\",\n\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.vehicle\",\n\t\t\t\t\t\"value\": \"MS DIRKJE\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.distance\",\n\t\t\t\t\t\"value\": \"1,000\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.distance.unit\",\n\t\t\t\t\t\"value\": \"KM\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.preleg.notify\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.shipment.traty.description\",\n\t\t\t\t\t\"value\": \"Bischi Trocken Metallboden gedeckt\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.spec.processing.indicator\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"MRN Nummer\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact\",\n\t\t\t\t\t\"value\": \"Matthias Kreuzer\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact.mail\",\n\t\t\t\t\t\"value\": \"Matthias.Kreuzer@k-plus-s.com\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact.tel\",\n\t\t\t\t\t\"value\": \"+4956193012301\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.shipment.transporttype\",\n\t\t\t\t\t\"value\": \"000000000002000158\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.no.loading.unloading\",\n\t\t\t\t\t\"value\": \"1/1\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.packageoffer.notify\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"visibility.product\",\n\t\t\t\t\t\"value\": \"rtv\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_TOUR\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_UNIT_TOUR\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"required_delivery_item_fields\": {\n\t\t\t\t\"parameters\": \"\",\n\t\t\t\t\"quantities\": \"\"\n\t\t\t},\n\t\t\t\"shipments\": {\n\t\t\t\t\"shipment\": {\n\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\"id\": \"322643298\"\n\t\t\t\t\t},\n\t\t\t\t\t\"index\": \"0\",\n\t\t\t\t\t\"tour_id\": \"746395414\",\n\t\t\t\t\t\"owner\": \"KS00\",\n\t\t\t\t\t\"number\": \"7250298867\",\n\t\t\t\t\t\"customer_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\"customer_number\": \"-\",\n\t\t\t\t\t\"faktura\": \"CPT - .\",\n\t\t\t\t\t\"vehicle_id\": \"\",\n\t\t\t\t\t\"vehicle_name\": \"-\",\n\t\t\t\t\t\"weight\": \"1150000\",\n\t\t\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\t\t\"length\": \"0\",\n\t\t\t\t\t\"length_unit\": \"m\",\n\t\t\t\t\t\"volume\": \"0\",\n\t\t\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\t\t\"route\": \"0\",\n\t\t\t\t\t\"route_unit\": \"km\",\n\t\t\t\t\t\"dlclass\": \"0\",\n\t\t\t\t\t\"dlnumber\": \"0\",\n\t\t\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\"comment_plain_text\": \"\",\n\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\"item\": {\n\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\"id\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"pos_number\": \"000010\",\n\t\t\t\t\t\t\t\"pos_index\": \"1\",\n\t\t\t\t\t\t\t\"description\": \"RESIDUE SALT R M40-0 bulk\",\n\t\t\t\t\t\t\t\"short_description\": \"RESIDUE SALT R M40-0 bulk\",\n\t\t\t\t\t\t\t\"material_number\": \"55443\",\n\t\t\t\t\t\t\t\"quantities\": {\n\t\t\t\t\t\t\t\t\"quantity\": [{\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"noOfTransportUnits\",\n\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightGross\",\n\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightNet\",\n\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimension.volume\",\n\t\t\t\t\t\t\t\t\t\"unit\": \"M3\",\n\t\t\t\t\t\t\t\t\t\"value\": \"0.0\"\n\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.adr\",\n\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Gefahrguthinweis\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.item.materialsalestext\",\n\t\t\t\t\t\t\t\t\t\"value\": \"R�ckstandssalz M40-0 lose\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Materialverkaufstext\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.stawnnumber\",\n\t\t\t\t\t\t\t\t\t\"value\": \"25010099\",\n\t\t\t\t\t\t\t\t\t\"description\": \"Zolltarifnummer\"\n\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\"description\": \"IDTF Nummer\"\n\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"station\": [{\n\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\"id\": \"184751\",\n\t\t\t\t\t\t\t\"type\": \"loading\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"shipment_id\": \"7250298867\",\n\t\t\t\t\t\t\"avis\": \"0390466833\",\n\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\"company_name\": \"UHH Umschlags- und Handelsges. mbH\",\n\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\"address\": \"Hafenstr. 43\",\n\t\t\t\t\t\t\"zip\": \"39340\",\n\t\t\t\t\t\t\"city\": \"Haldensleben\",\n\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\"country_id\": \"DE\",\n\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\"from_date\": \"2022-02-28\",\n\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\"until_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\t\"comment_plain_text\": \"\"\n\t\t\t\t\t}, {\n\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\"id\": \"541768\",\n\t\t\t\t\t\t\t\"type\": \"unloading\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"shipment_id\": \"7250298867\",\n\t\t\t\t\t\t\"avis\": \"\",\n\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\"company_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\"address\": \"Lange Lijnbaan 15\",\n\t\t\t\t\t\t\"zip\": \"8861 NW\",\n\t\t\t\t\t\t\"city\": \"Harlingen\",\n\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\"country_id\": \"NL\",\n\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\"from_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\"until_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\"fixed_date_unloading\": \"2022-03-07\",\n\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\"comment\": \"Time of receipt:\",\n\t\t\t\t\t\t\"comment_plain_text\": \"Time of receipt:\"\n\t\t\t\t\t}],\n\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\t\t\"qualifier\": \"shipping.receiving.point\",\n\t\t\t\t\t\t\t\"value\": \"1131\",\n\t\t\t\t\t\t\t\"description\": \"VST Umschlag UHH, Haldesleben\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"delivery.type\",\n\t\t\t\t\t\t\t\"value\": \"ZZNI\",\n\t\t\t\t\t\t\t\"description\": \"Delivery Type\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"partner.id.recipient\",\n\t\t\t\t\t\t\t\"value\": \"0003750599\",\n\t\t\t\t\t\t\t\"description\": \"Ship-To Party\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.inco\",\n\t\t\t\t\t\t\t\"value\": \"CPT\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.order\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.ordernumber\",\n\t\t\t\t\t\t\t\"value\": \"8002482458\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.pallet.change\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.adress\",\n\t\t\t\t\t\t\t\"value\": \"Lange Lijnbaan 15 | NL-8861 NW Harlingen\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.name\",\n\t\t\t\t\t\t\t\"value\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.adress\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.name\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.code\",\n\t\t\t\t\t\t\t\"value\": \"DEHLH\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.description\",\n\t\t\t\t\t\t\t\"value\": \"Haldensleben\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.code\",\n\t\t\t\t\t\t\t\"value\": \"NLHAR\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.description\",\n\t\t\t\t\t\t\t\"value\": \"Harlingen\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.name\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.eorinumber\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_TIME\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_DATE\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"bookings\": \"\"\n\t\t}\n\t}\n}\nconst item = { body };\n\nreturn item;"
+      },
+      "name": "Input execution 4135",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -920
+      ],
+      "id": "f97099e6-3283-4d59-a07e-2f182fa98c80"
+    },
+    {
+      "parameters": {
+        "functionCode": "const transporeonCompanyId = item.body.tisys.tour.company_id;\n\nconst customerMap = {\n    220931: { // K+S\n        companyId: 5011,\n        token: 'TOKENFORKSTRANSPOREON',\n        extraDataFormat: 'TransporeonKS',\n        emailAddresses: ['lydia@']\n    },\n}\n\nconst customerData = customerMap[transporeonCompanyId]\n\nreturn { ...customerData, ...item };\n"
+      },
+      "name": "Map on our customers",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -360,
+        -720
+      ],
+      "id": "aded2660-0e84-4c70-b451-ef15f88b10d1"
+    },
+    {
+      "parameters": {
+        "functionCode": "const body = {\n\t\"tisys\": {\n\t\t\"tour\": {\n\t\t\t\"$\": {\n\t\t\t\t\"id\": \"746395414\"\n\t\t\t},\n\t\t\t\"timestamp\": \"2022-02-17 12:56:49\",\n\t\t\t\"changed\": \"0\",\n\t\t\t\"number\": \"21395952\",\n\t\t\t\"external_transport_number\": \"\",\n\t\t\t\"attachments\": \"\",\n\t\t\t\"tpw_link\": \"https://login.transporeon.com/?jumpToTransport=true&transportId=746395414\",\n\t\t\t\"status\": \"N\",\n\t\t\t\"qualifier\": \"tour.accepted\",\n\t\t\t\"shadow_nto\": \"0\",\n\t\t\t\"partial_accept\": \"0\",\n\t\t\t\"company_id\": \"220931\",\n\t\t\t\"company_name\": \"K+S Minerals und Agriculture GmbH\",\n\t\t\t\"company_address\": \"Bertha-von-Suttner-Str. 7\",\n\t\t\t\"company_zip_address\": \"34131\",\n\t\t\t\"company_city\": \"Kassel\",\n\t\t\t\"company_region\": \"\",\n\t\t\t\"company_country_id\": \"DE\",\n\t\t\t\"disponent_firstname\": \"Matthias\",\n\t\t\t\"disponent_lastname\": \"Kreuzer\",\n\t\t\t\"disponent_phone\": \"+4917612348895\",\n\t\t\t\"disponent_id\": \"9139502\",\n\t\t\t\"carrier_disponent_name\": \"Matthias Kreuzer\",\n\t\t\t\"carrier_disponent_id\": \"0\",\n\t\t\t\"vehicle_id\": \"0\",\n\t\t\t\"vehicle_name\": \"Bischi Trocken Metallboden gedeckt\",\n\t\t\t\"start_date\": \"2022-02-28\",\n\t\t\t\"start_time\": \"00:00:00\",\n\t\t\t\"end_date\": \"2022-03-07\",\n\t\t\t\"end_time\": \"00:00:00\",\n\t\t\t\"owner\": \"KS00\",\n\t\t\t\"start_country_id\": \"DE\",\n\t\t\t\"start_zip\": \"39340\",\n\t\t\t\"start_city\": \"Haldensleben\",\n\t\t\t\"start_region\": \"\",\n\t\t\t\"end_country_id\": \"NL\",\n\t\t\t\"end_zip\": \"8861 NW\",\n\t\t\t\"end_city\": \"Harlingen\",\n\t\t\t\"end_region\": \"\",\n\t\t\t\"price_basic\": \"\",\n\t\t\t\"price_additional1\": \"0.00\",\n\t\t\t\"price_additional2\": \"0.00\",\n\t\t\t\"price_additional3\": \"0.00\",\n\t\t\t\"price_additional1_desc\": \"-\",\n\t\t\t\"price_additional2_desc\": \"-\",\n\t\t\t\"price_additional3_desc\": \"-\",\n\t\t\t\"currency_id\": \"\",\n\t\t\t\"assigned_carrier_id\": \"327944\",\n\t\t\t\"assigned_carrier_name\": \"Cooperatie NPRC u.a.\",\n\t\t\t\"assigned_creditor_number\": \"0006324401\",\n\t\t\t\"carrier_number\": \"\",\n\t\t\t\"weight\": \"1150000\",\n\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\"length\": \"0\",\n\t\t\t\"length_unit\": \"m\",\n\t\t\t\"volume\": \"0\",\n\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\"route\": \"588\",\n\t\t\t\"route_unit\": \"km\",\n\t\t\t\"zone\": \"\",\n\t\t\t\"auction_start_date\": \"\",\n\t\t\t\"auction_start_time\": \"\",\n\t\t\t\"auction_end_date\": \"2022-02-17\",\n\t\t\t\"auction_end_time\": \"11:56:48\",\n\t\t\t\"auction_comment\": \"\",\n\t\t\t\"auction_comment_plain_text\": \"\",\n\t\t\t\"plant\": \"KS00\",\n\t\t\t\"delivery_group_number\": \"\",\n\t\t\t\"tkn_loading_station\": \"\",\n\t\t\t\"tkn_weight\": \"1150000\",\n\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\"pin\": \"\",\n\t\t\t\"tsm_light_login_link\": \"https://tsm.transporeon.com/?token=6EkqpRwROAd73OxIbKgOLLsWnOe0D8NIfNdLgWQxa3UnWLN1EBxB4LgW6hhZiHcN\",\n\t\t\t\"comment\": \"<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Allgemeine_Transportbedingungen_LKW_der_KplusS_Gruppe_DE.pdf\\\">AllgemeineTransportbedingungen LKW der K+S Gruppe</a>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/General_Terms_and_Conditions_for_Truck_Transports_of_KplusS_Group_EN.pdf\\\">GeneralTerms and Conditions for Truck Transports of K+S Group<a/>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Conditions_generales_de_vente_des_camions_de_transport_dugroupe_KplusS_FR.pdf\\\">Conditions G�n�rales de Transport routier applicables dans le Groupe K+S<a/>.__NEWLINE__\",\n\t\t\t\"comment_plain_text\": \"AllgemeineTransportbedingungen LKW der K+S Gruppe.__NEWLINE__GeneralTerms and Conditions for Truck Transports of K+S Group.__NEWLINE__Conditions G�n�rales de Transport routier applicables dans le Groupe K+S.__NEWLINE__\",\n\t\t\t\"internal_comment\": \"\",\n\t\t\t\"parameters\": {\n\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\"qualifier\": \"transportation.planning.point\",\n\t\t\t\t\t\"value\": \"KS00\",\n\t\t\t\t\t\"description\": \"K+S OU Europe+\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.amount.of.pallets\",\n\t\t\t\t\t\"value\": \"0\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.servicelevel\",\n\t\t\t\t\t\"value\": \"Ladung\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.param.process\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.transport.begin\",\n\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.transport.end\",\n\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.vehicle\",\n\t\t\t\t\t\"value\": \"MS DIRKJE\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.distance\",\n\t\t\t\t\t\"value\": \"1,000\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.distance.unit\",\n\t\t\t\t\t\"value\": \"KM\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.preleg.notify\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.shipment.traty.description\",\n\t\t\t\t\t\"value\": \"Bischi Trocken Metallboden gedeckt\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.spec.processing.indicator\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"MRN Nummer\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact\",\n\t\t\t\t\t\"value\": \"Matthias Kreuzer\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact.mail\",\n\t\t\t\t\t\"value\": \"Matthias.Kreuzer@k-plus-s.com\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.contact.tel\",\n\t\t\t\t\t\"value\": \"+4956193012301\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.shipment.transporttype\",\n\t\t\t\t\t\"value\": \"000000000002000158\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.no.loading.unloading\",\n\t\t\t\t\t\"value\": \"1/1\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"custom.packageoffer.notify\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"visibility.product\",\n\t\t\t\t\t\"value\": \"rtv\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_TOUR\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}, {\n\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_UNIT_TOUR\",\n\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\"description\": \"\"\n\t\t\t\t}]\n\t\t\t},\n\t\t\t\"required_delivery_item_fields\": {\n\t\t\t\t\"parameters\": \"\",\n\t\t\t\t\"quantities\": \"\"\n\t\t\t},\n\t\t\t\"shipments\": {\n\t\t\t\t\"shipment\": {\n\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\"id\": \"322643298\"\n\t\t\t\t\t},\n\t\t\t\t\t\"index\": \"0\",\n\t\t\t\t\t\"tour_id\": \"746395414\",\n\t\t\t\t\t\"owner\": \"KS00\",\n\t\t\t\t\t\"number\": \"7250298867\",\n\t\t\t\t\t\"customer_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\"customer_number\": \"-\",\n\t\t\t\t\t\"faktura\": \"CPT - .\",\n\t\t\t\t\t\"vehicle_id\": \"\",\n\t\t\t\t\t\"vehicle_name\": \"-\",\n\t\t\t\t\t\"weight\": \"1150000\",\n\t\t\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\t\t\"length\": \"0\",\n\t\t\t\t\t\"length_unit\": \"m\",\n\t\t\t\t\t\"volume\": \"0\",\n\t\t\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\t\t\"route\": \"0\",\n\t\t\t\t\t\"route_unit\": \"km\",\n\t\t\t\t\t\"dlclass\": \"0\",\n\t\t\t\t\t\"dlnumber\": \"0\",\n\t\t\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\"comment_plain_text\": \"\",\n\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\"item\": [{\n\t\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\t\"id\": \"\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"pos_number\": \"000001\",\n\t\t\t\t\t\t\t\t\"pos_index\": \"1\",\n\t\t\t\t\t\t\t\t\"description\": \"Kies 27 f 0,5 S01/S02 lose\",\n\t\t\t\t\t\t\t\t\"short_description\": \"Kies 27 f 0,5 S01/S02 lose\",\n\t\t\t\t\t\t\t\t\"material_number\": \"77380\",\n\t\t\t\t\t\t\t\t\"quantities\": {\n\t\t\t\t\t\t\t\t\t\"quantity\": [{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"noOfTransportUnits\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"TO\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1028.15\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightGross\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1028150.0\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightNet\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1028150.0\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimension.volume\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"M3\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"0.0\"\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.adr\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Gefahrguthinweis\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.item.materialsalestext\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"Esta-Kieseriet Meststof KIESERIET garantie: 27 % Magnesiumoxyde (MgO), oplosbaar in water 54 % Zwavelzuuranhydride (SO3), oplosbaar in water l o s\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Materialverkaufstext\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.stawnnumber\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"25302000\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Zolltarifnummer\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"IDTF Nummer\"\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\t\"id\": \"\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"pos_number\": \"000010\",\n\t\t\t\t\t\t\t\t\"pos_index\": \"1\",\n\t\t\t\t\t\t\t\t\"description\": \"RESIDUE SALT R M40-0 bulk\",\n\t\t\t\t\t\t\t\t\"short_description\": \"RESIDUE SALT R M40-0 bulk\",\n\t\t\t\t\t\t\t\t\"material_number\": \"55443\",\n\t\t\t\t\t\t\t\t\"quantities\": {\n\t\t\t\t\t\t\t\t\t\"quantity\": [{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"noOfTransportUnits\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightGross\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightNet\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"1150000.0\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimension.volume\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"M3\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"0.0\"\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.adr\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Gefahrguthinweis\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.item.materialsalestext\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"R�ckstandssalz M40-0 lose\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Materialverkaufstext\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.stawnnumber\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"25010099\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Zolltarifnummer\"\n\t\t\t\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"IDTF Nummer\"\n\t\t\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t},\n\t\t\t\t\t\"station\": [{\n\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\"id\": \"184751\",\n\t\t\t\t\t\t\t\"type\": \"loading\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"shipment_id\": \"7250298867\",\n\t\t\t\t\t\t\"avis\": \"0390466833\",\n\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\"company_name\": \"UHH Umschlags- und Handelsges. mbH\",\n\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\"address\": \"Hafenstr. 43\",\n\t\t\t\t\t\t\"zip\": \"39340\",\n\t\t\t\t\t\t\"city\": \"Haldensleben\",\n\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\"country_id\": \"DE\",\n\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\"from_date\": \"2022-02-28\",\n\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\"until_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\t\"comment_plain_text\": \"\"\n\t\t\t\t\t}, {\n\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\"id\": \"541768\",\n\t\t\t\t\t\t\t\"type\": \"unloading\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"shipment_id\": \"7250298867\",\n\t\t\t\t\t\t\"avis\": \"\",\n\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\"company_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\"address\": \"Lange Lijnbaan 15\",\n\t\t\t\t\t\t\"zip\": \"8861 NW\",\n\t\t\t\t\t\t\"city\": \"Harlingen\",\n\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\"country_id\": \"NL\",\n\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\"from_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\"until_date\": \"2022-03-07\",\n\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\"fixed_date_unloading\": \"2022-03-07\",\n\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\"comment\": \"Time of receipt:\",\n\t\t\t\t\t\t\"comment_plain_text\": \"Time of receipt:\"\n\t\t\t\t\t}],\n\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\"parameter\": [{\n\t\t\t\t\t\t\t\"qualifier\": \"shipping.receiving.point\",\n\t\t\t\t\t\t\t\"value\": \"1131\",\n\t\t\t\t\t\t\t\"description\": \"VST Umschlag UHH, Haldesleben\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"delivery.type\",\n\t\t\t\t\t\t\t\"value\": \"ZZNI\",\n\t\t\t\t\t\t\t\"description\": \"Delivery Type\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"partner.id.recipient\",\n\t\t\t\t\t\t\t\"value\": \"0003750599\",\n\t\t\t\t\t\t\t\"description\": \"Ship-To Party\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.inco\",\n\t\t\t\t\t\t\t\"value\": \"CPT\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.order\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.ordernumber\",\n\t\t\t\t\t\t\t\"value\": \"8002482458\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.pallet.change\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.adress\",\n\t\t\t\t\t\t\t\"value\": \"Lange Lijnbaan 15 | NL-8861 NW Harlingen\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.name\",\n\t\t\t\t\t\t\t\"value\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.adress\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.name\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.code\",\n\t\t\t\t\t\t\t\"value\": \"DEHLH\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.description\",\n\t\t\t\t\t\t\t\"value\": \"Haldensleben\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.code\",\n\t\t\t\t\t\t\t\"value\": \"NLHAR\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.description\",\n\t\t\t\t\t\t\t\"value\": \"Harlingen\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.mail\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.name\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.tel\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.eorinumber\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_TIME\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_DATE\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}, {\n\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t}]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"bookings\": \"\"\n\t\t}\n\t}\n}\nconst item = { body };\n\nreturn item;"
+      },
+      "name": "Input execution 4135 meer items",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -1120
+      ],
+      "id": "65f2ab72-f4a9-4c3f-beca-66de73d12f83"
+    },
+    {
+      "parameters": {
+        "mode": "multiplex"
+      },
+      "name": "Merge1",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 1,
+      "position": [
+        180,
+        -720
+      ],
+      "id": "166d140f-d416-4999-8cbf-ed42128108c3"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json[\"someCargoTypeIdNotFound\"]}}",
+              "value2": "={{true}}"
+            }
+          ]
+        }
+      },
+      "name": "If some cargotype not found",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -720
+      ],
+      "id": "0dcbc857-7498-4151-8ca1-f86bfad89a0b"
+    },
+    {
+      "parameters": {
+        "functionCode": "const { map } = item;\n\nitem.unknownRecords = [];\n\nitem.ladingen.forEach(lading => {\n  const cargoTypeId = map[lading.material_number];\n  if (cargoTypeId) {\n      lading.cargoTypeId = cargoTypeId;\n  } else {\n      item.unknownRecords.push(lading)\n  }\n});\n\n// check of er ergens geen cargoTypeId is gevonden\nitem.someCargoTypeIdNotFound = item.unknownRecords.length > 0\n\nreturn item;"
+      },
+      "name": "Map to cargoTypes",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        340,
+        -720
+      ],
+      "id": "66ad6799-2265-47cf-815c-82997ab127e3"
+    },
+    {
+      "parameters": {
+        "functionCode": "const map = items.reduce((acc, item) => {\n  acc[item.json.companyCargotypeCode] = item.json.cargoTypeId;\n  \n  return acc;\n}, {})\n\nconst item = {\n  json: {\n    map\n  }\n}\n\nreturn [item];"
+      },
+      "name": "To single map",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        40,
+        -620
+      ],
+      "id": "6f8749db-020d-4cac-9bab-e2825c953be5"
+    },
+    {
+      "parameters": {
+        "functionCode": "const firstAndOnlyItem = items[0].json;\n\nconst outputItemsPerCargotype = firstAndOnlyItem.ladingen.reduce((acc, lading) => {\n  const quantity = (\n    Array.isArray(lading.quantities.quantity)\n      ? lading.quantities.quantity\n      : [lading.quantities.quantity]\n  ).find(quantity => quantity.unit === 'KG');\n\n  \n  if (acc[lading.cargoTypeId]) {\n    acc[lading.cargoTypeId].quantity += Number(quantity.value) / 1000; // Post in Ton ipv KG\n  } else {\n    acc[lading.cargoTypeId] = {\n      ...firstAndOnlyItem.baseBodyToPost,\n      cargoType: { id: lading.cargoTypeId },\n      quantity: Number(quantity.value) / 1000, // Post in Ton ipv KG\n    }\n  \n  }\n  \n  return acc \n}, {});\n\nconst outputItems = Object.values(outputItemsPerCargotype).map((bodyToPost) => {\n  return {\n     json: {\n       bodyToPost,\n       token: firstAndOnlyItem.token,\n       url: firstAndOnlyItem.ENV_API_BASE_URL\n     }\n  };\n});\n\nreturn outputItems;"
+      },
+      "name": "Prepare one or more bodies to POST",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -520
+      ],
+      "id": "8d5dbf44-2841-437c-b27b-1bcf44d24c54"
+    },
+    {
+      "parameters": {
+        "requestMethod": "POST",
+        "url": "={{$json[\"url\"]}}/transactions?token={{$json[\"token\"]}}",
+        "jsonParameters": true,
+        "options": {
+          "bodyContentType": "raw"
+        },
+        "bodyParametersJson": "={{$json[\"bodyToPost\"]}}",
+        "headerParametersJson": "="
+      },
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        -520
+      ],
+      "id": "53f49c82-a8c9-418b-9505-57cbdb1fdff6"
+    },
+    {
+      "parameters": {
+        "functionCode": "const shipmentItems = [];\n// de items van alle shipments bij elkaar.\n// In node \"Prepare one or more bodies to POST\" worden deze per ladingsoort bijelkaar opgeteld\n\nconst shipments = Array.isArray(item.body.tisys.tour.shipments.shipment)\n    ? item.body.tisys.tour.shipments.shipment\n    : [item.body.tisys.tour.shipments.shipment];\n\nshipments.forEach((shipment) => {\n    const items = Array.isArray(shipment.items.item) ? shipment.items.item : [shipment.items.item];\n    items.forEach((shipmentItem) => {\n        shipmentItems.push(shipmentItem);\n    });\n});\n\nitem.ladingen = Array.isArray(shipmentItems) ? shipmentItems : [shipmentItems];\nitem.baseBodyToPost = {\n\treferenceNumber: item.body.tisys.tour.number,\n\t// cargoType: { },\n\t// quantity: item.quantity,\n\tquantityEstimated: false,\n\tloadingDate: item.body.tisys.tour.start_date,\n\tdischargingDate: item.body.tisys.tour.end_date,\n\tfromLocation: {\n\t\tname: item.body.tisys.tour.start_city,\n\t},\n\ttoLocation: {\n\t\tname: item.body.tisys.tour.end_city,\n\t},\n\tremarks: item.body.tisys.tour.internal_comment,\n\textraData: {\n\t\tinterfaceId: item.body.tisys.tour.$.id,\n\t\tcontactPersonName: item.body.tisys.tour.carrier_disponent_name,\n\t\tcontactPersonMail: '',\n\t\tcontactPersonPhone: '',\n\t\tloadingSite: shipments[0].station[0].company_name,\n\t\tunloadingSite: shipments[0].station[1].company_name,\n\t},\n\textraDataFormat: item.extraDataFormat,\n};\n\ndelete item.body;\n\nreturn item;"
+      },
+      "name": "Prepare ladingen and base body",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -820
+      ],
+      "id": "0796e7bb-81ff-4a0f-bae7-1a388234b291"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=select companyCargotypeCode, cargoTypeId\nfrom api.ViewCargoTypeMapping\nwhere companyID = {{$json[\"companyId\"]}}"
+      },
+      "name": "Get cargotype mappings",
+      "type": "n8n-nodes-base.microsoftSql",
+      "typeVersion": 1,
+      "position": [
+        -160,
+        -620
+      ],
+      "alwaysOutputData": true,
+      "id": "5a53f98c-7dbe-4561-98f9-4b33d4312bce",
+      "credentials": {
+        "microsoftSql": {
+          "id": "11",
+          "name": "Microsoft SQL - with env node"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "cargos@nprc.nl",
+        "toEmail": "dennis.schagen@nprc.nl",
+        "subject": "=n8n - {{$workflow.name}} - ongemapte ladingsoorten {{$executionId}}",
+        "text": "=Een of meer ongemapte ladingsoorten.\nenvironment: {{$node[\"with env\"].json[\"ENV_NAME\"] }}\nhttps://nprc.app.n8n.cloud/execution/{{$executionId}}"
+      },
+      "name": "Mailgun",
+      "type": "n8n-nodes-base.mailgun",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        -920
+      ],
+      "notesInFlow": true,
+      "id": "ca34bc1f-fb6e-42fb-b654-5eb017aed52f",
+      "credentials": {
+        "mailgunApi": {
+          "id": "4",
+          "name": "Mailgun account"
+        }
+      },
+      "notes": "alert for unmapped cargo types"
+    },
+    {
+      "parameters": {
+        "functionCode": "item.emailSubject = '...';\n\nitem.emailBody = '...';\n\nreturn item;"
+      },
+      "name": "Prepare subject and body",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -920
+      ],
+      "id": "636166b0-b415-4d64-853e-e3215b93ade5"
+    },
+    {
+      "parameters": {
+        "table": "api.ViewCargoTypeMapping",
+        "columns": "companyId, companyCargoTypeCode, companyDescription"
+      },
+      "name": "Microsoft SQL",
+      "type": "n8n-nodes-base.microsoftSql",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        -740
+      ],
+      "id": "e82734ba-3153-4701-8980-137379b00463",
+      "credentials": {
+        "microsoftSql": {
+          "id": "11",
+          "name": "Microsoft SQL - with env node"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "unknownRecords",
+        "options": {}
+      },
+      "name": "make list of unknowns",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 1,
+      "position": [
+        820,
+        -740
+      ],
+      "id": "d6998b30-1cc8-4df6-8637-32f9987e6e69"
+    },
+    {
+      "parameters": {
+        "functionCode": "item.companyCargoTypeCode = item.material_number;\nitem.companyDescription = item.description;\nreturn item;"
+      },
+      "name": "Prepare insert",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        1400,
+        -740
+      ],
+      "id": "36b13770-b805-475d-bce5-9f2f3f416396",
+      "notes": "Prepare item fields for insert"
+    },
+    {
+      "parameters": {
+        "functionCode": "item.body = JSON.parse(item.json);\n\nreturn item;"
+      },
+      "name": "Parse json",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        -720
+      ],
+      "id": "1edcc244-c289-4a3b-bfc5-f912c0cea930"
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "companyId",
+              "value": "={{$node[\"Merge1\"].json[\"companyId\"]}}"
+            },
+            {
+              "name": "BedrijfId",
+              "value": "={{$node[\"Merge1\"].json[\"companyId\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set companyId",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -740
+      ],
+      "id": "ac8f0b64-b617-45a7-bef9-e0fad4000cd6",
+      "notes": "companyId uit eerdere node"
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "status",
+              "value": 2
+            },
+            {
+              "name": "executionId",
+              "value": "={{0}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set Status 2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        -740
+      ],
+      "id": "9eb53f17-4663-4000-a1eb-8222965f1203"
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "status",
+              "value": 1
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set Status 1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1200,
+        -520
+      ],
+      "id": "db03c9ba-2d3b-4d9c-8bcc-073451e21021"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "dateprocessed",
+              "value": "={{new Date().toISOString()}}"
+            }
+          ],
+          "number": [
+            {
+              "name": "ExecutionID",
+              "value": "= {{$node[\"Start\"].json[\"ExecutionID\"]}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Set processed datetime",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        1740,
+        -600
+      ],
+      "id": "e982a699-5f6e-45d2-94c4-d039bf085297"
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "table": "api.ViewQueuedMessages",
+        "updateKey": "ExecutionID",
+        "columns": "dateprocessed, status,BedrijfId"
+      },
+      "name": "Mark as processed",
+      "type": "n8n-nodes-base.microsoftSql",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        -600
+      ],
+      "id": "ab799478-ff6e-46b8-9c26-2551fd6de18c",
+      "credentials": {
+        "microsoftSql": {
+          "id": "11",
+          "name": "Microsoft SQL - with env node"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "with env",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        -720
+      ],
+      "notesInFlow": true,
+      "id": "34e66585-fc79-4a6c-b278-858d6e885238",
+      "notes": "dont rename this node!!!"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json[\"baseBodyToPost\"][\"fromLocation\"][\"name\"]}}",
+              "value2": "=Wesel"
+            }
+          ]
+        }
+      },
+      "name": "Exit bij uitzonderingen",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        480,
+        -860
+      ],
+      "notesInFlow": true,
+      "id": "fd6c7fd1-29ba-431e-b92e-3f95f8f79a0a",
+      "continueOnFail": true,
+      "notes": "Exit het proces als aan een van de uitzonderingsvoorwaarden wordt voldaan.\nElke uitzondering moet 1 voorwaarde vormen in de parameters van deze exit-node, en de uitzondering moet TRUE opleveren om het proces te stoppen."
+    },
+    {
+      "parameters": {
+        "functionCode": "const body = {\n\t\n\t\"tisys\": {\n\t\t\"tour\": {\n\t\t\t\"$\": {\n\t\t\t\t\"id\": \"767306160\"\n\t\t\t},\n\t\t\t\"timestamp\": \"2022-08-16 15:17:46\",\n\t\t\t\"changed\": \"0\",\n\t\t\t\"number\": \"21645676\",\n\t\t\t\"external_transport_number\": \"\",\n\t\t\t\"attachments\": \"\",\n\t\t\t\"tpw_link\": \"https://login.transporeon.com/?jumpToTransport=true&transportId=767306160\",\n\t\t\t\"status\": \"C\",\n\t\t\t\"qualifier\": \"tour.assigned.change\",\n\t\t\t\"shadow_nto\": \"0\",\n\t\t\t\"partial_accept\": \"0\",\n\t\t\t\"company_id\": \"220931\",\n\t\t\t\"company_name\": \"K+S Minerals und Agriculture GmbH\",\n\t\t\t\"company_address\": \"Bertha-von-Suttner-Str. 7\",\n\t\t\t\"company_zip_address\": \"34131\",\n\t\t\t\"company_city\": \"Kassel\",\n\t\t\t\"company_region\": \"\",\n\t\t\t\"company_country_id\": \"DE\",\n\t\t\t\"disponent_firstname\": \"TP Add-on\",\n\t\t\t\"disponent_lastname\": \"System Account\",\n\t\t\t\"disponent_phone\": \"\",\n\t\t\t\"disponent_id\": \"651325\",\n\t\t\t\"carrier_disponent_name\": \"Michelle Erkmann\",\n\t\t\t\"carrier_disponent_id\": \"0\",\n\t\t\t\"vehicle_id\": \"0\",\n\t\t\t\"vehicle_name\": \"Bischi Trocken Holzboden gedeckt\",\n\t\t\t\"start_date\": \"2022-08-15\",\n\t\t\t\"start_time\": \"00:00:00\",\n\t\t\t\"end_date\": \"2022-08-17\",\n\t\t\t\"end_time\": \"00:00:00\",\n\t\t\t\"owner\": \"KS00\",\n\t\t\t\"start_country_id\": \"DE\",\n\t\t\t\"start_zip\": \"46483\",\n\t\t\t\"start_city\": \"Wesel\",\n\t\t\t\"start_region\": \"\",\n\t\t\t\"end_country_id\": \"NL\",\n\t\t\t\"end_zip\": \"8861 NW\",\n\t\t\t\"end_city\": \"Harlingen\",\n\t\t\t\"end_region\": \"\",\n\t\t\t\"price_basic\": \"\",\n\t\t\t\"price_additional1\": \"0.00\",\n\t\t\t\"price_additional2\": \"0.00\",\n\t\t\t\"price_additional3\": \"0.00\",\n\t\t\t\"price_additional1_desc\": \"-\",\n\t\t\t\"price_additional2_desc\": \"-\",\n\t\t\t\"price_additional3_desc\": \"-\",\n\t\t\t\"currency_id\": \"\",\n\t\t\t\"assigned_carrier_id\": \"327944\",\n\t\t\t\"assigned_carrier_name\": \"Cooperatie NPRC u.a.\",\n\t\t\t\"assigned_creditor_number\": \"0006324401\",\n\t\t\t\"carrier_number\": \"\",\n\t\t\t\"weight\": \"816300\",\n\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\"length\": \"0\",\n\t\t\t\"length_unit\": \"m\",\n\t\t\t\"volume\": \"0\",\n\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\"route\": \"301\",\n\t\t\t\"route_unit\": \"km\",\n\t\t\t\"zone\": \"\",\n\t\t\t\"auction_start_date\": \"\",\n\t\t\t\"auction_start_time\": \"\",\n\t\t\t\"auction_end_date\": \"\",\n\t\t\t\"auction_end_time\": \"\",\n\t\t\t\"auction_comment\": \"\",\n\t\t\t\"auction_comment_plain_text\": \"\",\n\t\t\t\"plant\": \"KS00\",\n\t\t\t\"delivery_group_number\": \"\",\n\t\t\t\"tkn_loading_station\": \"\",\n\t\t\t\"tkn_weight\": \"816300\",\n\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\"pin\": \"\",\n\t\t\t\"tsm_light_login_link\": \"https://tsm.transporeon.com/?token=88WcQlTTG9OBikzaqNM5eJDDPpmjchALPNZ0W3v8Fh4D1tqZHxAqJInDwP6nxJa4\",\n\t\t\t\"comment\": \"<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Allgemeine_Transportbedingungen_LKW_der_KplusS_Gruppe_DE.pdf\\\">AllgemeineTransportbedingungen LKW der K+S Gruppe</a>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/General_Terms_and_Conditions_for_Truck_Transports_of_KplusS_Group_EN.pdf\\\">GeneralTerms and Conditions for Truck Transports of K+S Group<a/>.__NEWLINE__<a href=\\\"https://app.transporeon.com/download/MjIwOTMx/Conditions_generales_de_vente_des_camions_de_transport_dugroupe_KplusS_FR.pdf\\\">Conditions G�n�rales de Transport routier applicables dans le Groupe K+S<a/>.__NEWLINE__\",\n\t\t\t\"comment_plain_text\": \"AllgemeineTransportbedingungen LKW der K+S Gruppe.__NEWLINE__GeneralTerms and Conditions for Truck Transports of K+S Group.__NEWLINE__Conditions G�n�rales de Transport routier applicables dans le Groupe K+S.__NEWLINE__\",\n\t\t\t\"internal_comment\": \"\",\n\t\t\t\"parameters\": {\n\t\t\t\t\"parameter\": [\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"transportation.planning.point\",\n\t\t\t\t\t\t\"value\": \"KS00\",\n\t\t\t\t\t\t\"description\": \"K+S OU Europe+\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.amount.of.pallets\",\n\t\t\t\t\t\t\"value\": \"0\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.servicelevel\",\n\t\t\t\t\t\t\"value\": \"Ladung\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.param.process\",\n\t\t\t\t\t\t\"value\": \"no-touch order\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.transport.begin\",\n\t\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.transport.end\",\n\t\t\t\t\t\t\"value\": \"0000-00-00\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.vehicle\",\n\t\t\t\t\t\t\"value\": \"DEO GRACIAS\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.distance\",\n\t\t\t\t\t\t\"value\": \"1,000\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.distance.unit\",\n\t\t\t\t\t\t\"value\": \"KM\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.preleg.notify\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.shipment.traty.description\",\n\t\t\t\t\t\t\"value\": \"Bischi Trocken Holzboden gedeckt\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.spec.processing.indicator\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"MRN Nummer\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.contact\",\n\t\t\t\t\t\t\"value\": \"Michelle Erkmann\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.contact.mail\",\n\t\t\t\t\t\t\"value\": \"Michelle.Erkmann@k-plus-s.com\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.contact.tel\",\n\t\t\t\t\t\t\"value\": \"+4917612349269\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.shipment.transporttype\",\n\t\t\t\t\t\t\"value\": \"000000000002000156\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.no.loading.unloading\",\n\t\t\t\t\t\t\"value\": \"1/1\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"custom.packageoffer.notify\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"visibility.product\",\n\t\t\t\t\t\t\"value\": \"rtv\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_TOUR\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t},\n\t\t\t\t\t{\n\t\t\t\t\t\t\"qualifier\": \"SAP_ROUTE_UNIT_TOUR\",\n\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t}\n\t\t\t\t]\n\t\t\t},\n\t\t\t\"required_delivery_item_fields\": {\n\t\t\t\t\"parameters\": \"\",\n\t\t\t\t\"quantities\": \"\"\n\t\t\t},\n\t\t\t\"shipments\": {\n\t\t\t\t\"shipment\": {\n\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\"id\": \"354129733\"\n\t\t\t\t\t},\n\t\t\t\t\t\"index\": \"0\",\n\t\t\t\t\t\"tour_id\": \"767306160\",\n\t\t\t\t\t\"owner\": \"KS00\",\n\t\t\t\t\t\"number\": \"21645676-7250377610-1\",\n\t\t\t\t\t\"customer_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\"customer_number\": \"-\",\n\t\t\t\t\t\"faktura\": \"CPT - .\",\n\t\t\t\t\t\"vehicle_id\": \"\",\n\t\t\t\t\t\"vehicle_name\": \"-\",\n\t\t\t\t\t\"weight\": \"816300\",\n\t\t\t\t\t\"weight_unit\": \"kg\",\n\t\t\t\t\t\"length\": \"0\",\n\t\t\t\t\t\"length_unit\": \"m\",\n\t\t\t\t\t\"volume\": \"0\",\n\t\t\t\t\t\"volume_unit\": \"cbm\",\n\t\t\t\t\t\"route\": \"0\",\n\t\t\t\t\t\"route_unit\": \"km\",\n\t\t\t\t\t\"dlclass\": \"0\",\n\t\t\t\t\t\"dlnumber\": \"0\",\n\t\t\t\t\t\"storage_position_count\": \"0.00\",\n\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\"comment_plain_text\": \"\",\n\t\t\t\t\t\"items\": {\n\t\t\t\t\t\t\"item\": {\n\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\"id\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"pos_number\": \"000010\",\n\t\t\t\t\t\t\t\"pos_index\": \"1\",\n\t\t\t\t\t\t\t\"description\": \"Raw R M6-0,2 BO to FZ bulk\",\n\t\t\t\t\t\t\t\"short_description\": \"Raw R M6-0,2 BO to FZ bulk\",\n\t\t\t\t\t\t\t\"material_number\": \"55471\",\n\t\t\t\t\t\t\t\"quantities\": {\n\t\t\t\t\t\t\t\t\"quantity\": [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"noOfTransportUnits\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"816300.0\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightGross\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"816300.0\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimensionWeightNet\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"KG\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"816300.0\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"dimension.volume\",\n\t\t\t\t\t\t\t\t\t\t\"unit\": \"M3\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"0.0\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\t\t\"parameter\": [\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.adr\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Gefahrguthinweis\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.item.materialsalestext\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"Steinsalz M6-0,2 lose\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Materialverkaufstext\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.stawnnumber\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"25010099\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"Zolltarifnummer\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\t\t\t\"value\": \"40381 Minimum cleaning regime: A\",\n\t\t\t\t\t\t\t\t\t\t\"description\": \"IDTF Nummer\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"station\": [\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\"id\": \"79428\",\n\t\t\t\t\t\t\t\t\"type\": \"loading\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"shipment_id\": \"21645676-7250377610-1\",\n\t\t\t\t\t\t\t\"avis\": \"0281 204-324\",\n\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\"company_name\": \"Umschlagshafen Wesel\",\n\t\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\t\"address\": \"Hafenstr. 7-9\",\n\t\t\t\t\t\t\t\"zip\": \"46483\",\n\t\t\t\t\t\t\t\"city\": \"Wesel\",\n\t\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\t\"country_id\": \"DE\",\n\t\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\t\"from_date\": \"2022-08-15\",\n\t\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\t\"until_date\": \"2022-08-17\",\n\t\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\t\"comment\": \"\",\n\t\t\t\t\t\t\t\"comment_plain_text\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\"$\": {\n\t\t\t\t\t\t\t\t\"id\": \"541768\",\n\t\t\t\t\t\t\t\t\"type\": \"unloading\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"shipment_id\": \"21645676-7250377610-1\",\n\t\t\t\t\t\t\t\"avis\": \"\",\n\t\t\t\t\t\t\t\"description\": \"\",\n\t\t\t\t\t\t\t\"company_name\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\t\"shipper_location_number\": \"\",\n\t\t\t\t\t\t\t\"address\": \"Lange Lijnbaan 15\",\n\t\t\t\t\t\t\t\"zip\": \"8861 NW\",\n\t\t\t\t\t\t\t\"city\": \"Harlingen\",\n\t\t\t\t\t\t\t\"region\": \"-\",\n\t\t\t\t\t\t\t\"country_id\": \"NL\",\n\t\t\t\t\t\t\t\"loading_name\": \"\",\n\t\t\t\t\t\t\t\"loadingramp\": \"-\",\n\t\t\t\t\t\t\t\"from_date\": \"2022-08-17\",\n\t\t\t\t\t\t\t\"from_time\": \"00:00:00\",\n\t\t\t\t\t\t\t\"until_date\": \"2022-08-17\",\n\t\t\t\t\t\t\t\"until_time\": \"00:00:00\",\n\t\t\t\t\t\t\t\"fixed_date_unloading\": \"2022-08-17\",\n\t\t\t\t\t\t\t\"transportunit_name\": \"-\",\n\t\t\t\t\t\t\t\"transportunit_count\": \"0\",\n\t\t\t\t\t\t\t\"transportunit_pileable\": \"false\",\n\t\t\t\t\t\t\t\"comment\": \"Time of receipt:\",\n\t\t\t\t\t\t\t\"comment_plain_text\": \"Time of receipt:\"\n\t\t\t\t\t\t}\n\t\t\t\t\t],\n\t\t\t\t\t\"parameters\": {\n\t\t\t\t\t\t\"parameter\": [\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"shipping.receiving.point\",\n\t\t\t\t\t\t\t\t\"value\": \"1177\",\n\t\t\t\t\t\t\t\t\"description\": \"Umschlag Wesel\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"delivery.type\",\n\t\t\t\t\t\t\t\t\"value\": \"ZZNI\",\n\t\t\t\t\t\t\t\t\"description\": \"Delivery Type\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"partner.id.recipient\",\n\t\t\t\t\t\t\t\t\"value\": \"0003750599\",\n\t\t\t\t\t\t\t\t\"description\": \"Ship-To Party\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.inco\",\n\t\t\t\t\t\t\t\t\"value\": \"CPT\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.order\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.mail\",\n\t\t\t\t\t\t\t\t\"value\": \"salzverladung.wesel@huelskens.de\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.ordernumber\",\n\t\t\t\t\t\t\t\t\"value\": \"8002544926\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.loading.tel\",\n\t\t\t\t\t\t\t\t\"value\": \"+4928123075\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.pallet.change\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.mail\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.unloading.tel\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.adress\",\n\t\t\t\t\t\t\t\t\"value\": \"Lange Lijnbaan 15 | NL-8861 NW Harlingen\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.mail\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.name\",\n\t\t\t\t\t\t\t\t\"value\": \"Frisia Zout B.V.\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customer.tel\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.adress\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.mail\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.name\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.customsagent.tel\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.code\",\n\t\t\t\t\t\t\t\t\"value\": \"DEWES\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.loading.description\",\n\t\t\t\t\t\t\t\t\"value\": \"Wesel\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.code\",\n\t\t\t\t\t\t\t\t\"value\": \"NLHAR\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.port.of.unloading.description\",\n\t\t\t\t\t\t\t\t\"value\": \"Harlingen\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.mail\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.name\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.arrivalnotification.tel\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.eorinumber\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_TIME\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"SAP_LOAD_UNTIL_DATE\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.mrnnumber\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\"qualifier\": \"custom.idtf.no\",\n\t\t\t\t\t\t\t\t\"value\": \"\",\n\t\t\t\t\t\t\t\t\"description\": \"\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t]\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"bookings\": \"\"\n\t\t}\n\t}\n}\nreturn {json: JSON.stringify(body), \"ENV_HOST\": \"178.255.193.119\"};\n"
+      },
+      "name": "Input execution ",
+      "type": "n8n-nodes-base.functionItem",
+      "typeVersion": 1,
+      "position": [
+        -540,
+        -380
+      ],
+      "id": "e74dabe3-3024-4b7c-a20f-4dd62c8c9b67"
+    }
+  ],
+  "connections": {
+    "Map on our customers": {
+      "main": [
+        [
+          {
+            "node": "Prepare ladingen and base body",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get cargotype mappings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "Map to cargoTypes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If some cargotype not found": {
+      "main": [
+        [
+          {
+            "node": "Prepare subject and body",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "make list of unknowns",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare one or more bodies to POST",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Map to cargoTypes": {
+      "main": [
+        [
+          {
+            "node": "Exit bij uitzonderingen",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "To single map": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Prepare one or more bodies to POST": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare ladingen and base body": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get cargotype mappings": {
+      "main": [
+        [
+          {
+            "node": "To single map",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "make list of unknowns": {
+      "main": [
+        [
+          {
+            "node": "Set Status 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "with env",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare insert": {
+      "main": [
+        [
+          {
+            "node": "Microsoft SQL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set companyId": {
+      "main": [
+        [
+          {
+            "node": "Prepare insert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare subject and body": {
+      "main": [
+        [
+          {
+            "node": "Mailgun",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Status 2": {
+      "main": [
+        [
+          {
+            "node": "Set companyId",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Status 1": {
+      "main": [
+        [
+          {
+            "node": "Set processed datetime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set processed datetime": {
+      "main": [
+        [
+          {
+            "node": "Mark as processed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Set Status 1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Microsoft SQL": {
+      "main": [
+        [
+          {
+            "node": "Set processed datetime",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse json": {
+      "main": [
+        [
+          {
+            "node": "Map on our customers",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "with env": {
+      "main": [
+        [
+          {
+            "node": "Parse json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Exit bij uitzonderingen": {
+      "main": [
+        [
+          {
+            "node": "If some cargotype not found",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": true,
+    "errorWorkflow": "1007",
+    "saveManualExecutions": true
+  },
+  "triggerCount": 0,
+  "versionId": "0c79c0f9-89e4-4aaa-acdb-17d8b68c781c",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

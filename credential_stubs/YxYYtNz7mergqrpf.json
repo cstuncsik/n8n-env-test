@@ -1,0 +1,13 @@
+{
+  "id": "YxYYtNz7mergqrpf",
+  "name": "Anthropic account",
+  "type": "anthropicApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "M21XgKJsWGhBy121",
+    "teamName": "Test cross-sharing"
+  }
+}

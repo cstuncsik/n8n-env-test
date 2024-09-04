@@ -1,0 +1,68 @@
+{
+  "id": "WUJnMRUC7SCvAswO",
+  "name": "My workflow 20",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ea50f602-5c6c-4632-8881-3a03d37607b6",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "deleteTable",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        }
+      },
+      "id": "e3cc38d1-22d7-4888-8115-ae7f68b17279",
+      "name": "Postgres",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.4,
+      "position": [
+        840,
+        520
+      ],
+      "credentials": {
+        "postgres": {
+          "id": "WRlLHHafY7nL8K2u",
+          "name": "Postgres account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "d3212023-f553-4b73-8896-fdb81a277d1b",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

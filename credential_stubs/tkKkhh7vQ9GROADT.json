@@ -1,0 +1,13 @@
+{
+  "id": "tkKkhh7vQ9GROADT",
+  "name": "Unnamed credential 3",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

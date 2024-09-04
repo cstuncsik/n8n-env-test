@@ -1,0 +1,53 @@
+{
+  "id": "5GPLQWAfsZe2CecJ",
+  "name": "My workflow 23",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "93b61318-254f-47a7-9524-5ef5f8817c4f",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://http.cat/images/100.jpg",
+        "options": {}
+      },
+      "id": "f103f17d-603c-465b-9da4-34ab0e79f88a",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        460
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "0919de92-0818-4197-abbd-3b37b2ce72f0",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

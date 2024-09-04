@@ -1,0 +1,13 @@
+{
+  "id": "1gfhYJj3LPEkdVWD",
+  "name": "Unshared",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

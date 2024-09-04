@@ -1,0 +1,29 @@
+{
+  "id": "ipCenyCjvux1si2b",
+  "name": "Exec WF",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "15962595-ae26-4842-a734-ce22feb62b7f",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        540,
+        360
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "none"
+  },
+  "triggerCount": 0,
+  "versionId": "543d2a31-9091-413b-9f0e-57eb4c5f7286",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

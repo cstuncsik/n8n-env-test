@@ -1,0 +1,70 @@
+{
+  "id": "I5iXtJTYZvXNWRGg",
+  "name": "Readonly expression editor",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "7f84e27d-a371-4bec-aa55-d1ebf020c7c8",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        680,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "base": {
+          "__rl": true,
+          "value": "https://airtable.com/apptZ37Em3ANvhdSJ/tblLne7M46ESg1Fhp/viwk4JrB0d2uUxZOH?blocks=hide",
+          "mode": "url"
+        },
+        "table": {
+          "__rl": true,
+          "value": "https://airtable.com/apptZ37Em3ANvhdSJ/tblLne7M46ESg1Fhp/viwk4JrB0d2uUxZOH?blocks=hide",
+          "mode": "url"
+        },
+        "id": "={{ $json.recordId }}",
+        "options": {}
+      },
+      "id": "df2a76d5-4d1a-44e0-b681-fa40093e6b5d",
+      "name": "Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [
+        900,
+        520
+      ],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "SUuyP4Ww4y7EQs12",
+          "name": "Airtable Personal Access Token account 2"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Airtable",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "a07999f8-c274-4c1d-ab22-570be41e393c",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

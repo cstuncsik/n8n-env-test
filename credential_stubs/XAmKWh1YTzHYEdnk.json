@@ -1,0 +1,13 @@
+{
+  "id": "XAmKWh1YTzHYEdnk",
+  "name": "Pacc",
+  "type": "postgres",
+  "data": {
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

@@ -1,0 +1,1011 @@
+{
+  "id": "1035",
+  "name": "Items length test",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": true
+            }
+          ]
+        }
+      },
+      "id": "94cd0ac4-1ab9-43ea-a68c-3f3849fb7bdb",
+      "name": "false",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1580,
+        1520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "b778d778-8dcf-4919-9ba4-f068d6d1bdcb",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        900,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "length is wrong"
+      },
+      "id": "1b5c5dd0-23f8-463c-bb16-286d3fbb6787",
+      "name": "Stop and Error",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        1760
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "4567f986-4f13-41f7-bb6a-91fe3d250d9f",
+      "name": "length correct",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2440,
+        1420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAllPeople"
+      },
+      "id": "ab849617-9171-49f2-a047-a2cf38cf23c1",
+      "name": "Customer Datastore (n8n training)",
+      "type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+      "typeVersion": 1,
+      "position": [
+        1360,
+        1520
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "d4cef066-3235-41cf-aece-f1bfcd589f38",
+      "name": "Check length $items - normal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        1120
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "a27bbf35-b6c0-4c2a-87cf-767c0447a37a",
+      "name": "Check length $items - execute once",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1600,
+        1300
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "2e5d0d86-d8f0-4056-af78-c58c041716f6",
+      "name": "Check length $input - normal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        1900
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "2e9680cf-3dc4-4c20-9953-d1c3ba54e450",
+      "name": "Check length $input - once",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        2100
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "823ef4b3-ddbd-41e0-9eb4-4d8e4cdca5f6",
+      "name": "Check length $items - normal1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        1540
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "7b6e9dfb-8119-4de4-9931-2d91cd1c770d",
+      "name": "Check length $items - executeOnce",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1840,
+        1720
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "7d4f6b70-e785-4a30-bbc1-49f99208a8a6",
+      "name": "Output items correct",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        1100
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "5b231a48-cf95-4e3a-9a33-861e344a04a5",
+      "name": "Output items correct1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1940,
+        1280
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "38007584-45f0-42d9-a65d-7ed1e3e8a2ee",
+      "name": "Output items correct2",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        1480
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "9848f68a-df74-483f-bd50-13431aa34c91",
+      "name": "Output items correct3",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        1660
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "dce2928e-5e48-402b-af48-fcb6814a1d5d",
+      "name": "Output items correct4",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        2080
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $input.all().length }}",
+              "operation": "equal",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "61598c23-19f7-47a0-a5a3-8fad9e52c2b7",
+      "name": "Output items correct5",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        1880
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "getAllPeople"
+      },
+      "id": "c20967a0-1456-470b-a3c2-d2bed2286c64",
+      "name": "Customer Datastore (n8n training)1",
+      "type": "n8n-nodes-base.n8nTrainingCustomerDatastore",
+      "typeVersion": 1,
+      "position": [
+        1500,
+        2460
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "93158bb5-e1ad-47f1-9411-c0b5d44f9dbe",
+      "name": "Data",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1720,
+        2460
+      ]
+    },
+    {
+      "parameters": {
+        "errorMessage": "Something is wrong"
+      },
+      "id": "76be52f7-e6e9-4ab3-ac39-fe97cd66aedc",
+      "name": "Stop and Error1",
+      "type": "n8n-nodes-base.stopAndError",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        2520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "bb3cf646-632b-4910-9fc4-f6cbacef0ebd",
+      "name": "All Good",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        2660,
+        2340
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $input.first().json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $input.last().json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $input.all()[2].json.name }}",
+              "value2": "Max Sendak"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(0).json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(4).json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem().json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').item.json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').itemMatching(0).json.name }}",
+              "value2": "Jay Gatsby"
+            }
+          ]
+        }
+      },
+      "id": "dabca800-dec3-4f57-97af-1e96f50d5700",
+      "name": "IF - normal",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        2320
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $input.first().json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $input.last().json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $input.all()[2].json.name }}",
+              "value2": "Max Sendak"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(0).json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(4).json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem().json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').item.json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').itemMatching(0).json.name }}",
+              "value2": "Jay Gatsby"
+            }
+          ]
+        }
+      },
+      "id": "50d2c9ef-f1a2-4f1b-9e24-d92e03ae99be",
+      "name": "IF - execute once",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2260,
+        2520
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "e9a580a7-cad9-4dbf-8067-74acd31bc5c8",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1980,
+        2780
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $input.first().json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $input.last().json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $input.all()[2].json.name }}",
+              "value2": "Max Sendak"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(0).json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(4).json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem().json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').item.json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').itemMatching(0).json.name }}",
+              "value2": "Jay Gatsby"
+            }
+          ]
+        }
+      },
+      "id": "c7bcb02d-2840-4d3d-a12e-8769d3bc84b3",
+      "name": "IF - normal1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        2840
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $input.first().json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $input.last().json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $input.all()[2].json.name }}",
+              "value2": "Max Sendak"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(0).json.name }}",
+              "value2": "Jay Gatsby"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem(4).json.name }}",
+              "value2": "Edmund Pevensie"
+            },
+            {
+              "value1": "={{ $('Data').pairedItem().json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').item.json.name }}",
+              "value2": "={{ $json.name }}"
+            },
+            {
+              "value1": "={{ $('Data').itemMatching(0).json.name }}",
+              "value2": "Jay Gatsby"
+            }
+          ]
+        }
+      },
+      "id": "69230900-673a-49cd-826b-99f07d7e6596",
+      "name": "IF - execute once1",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        2320,
+        3040
+      ],
+      "executeOnce": true
+    }
+  ],
+  "connections": {
+    "false": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Check length $items - normal1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check length $items - executeOnce",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Customer Datastore (n8n training)1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Customer Datastore (n8n training)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Datastore (n8n training)": {
+      "main": [
+        [
+          {
+            "node": "Check length $items - normal",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check length $items - execute once",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "false",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check length $input - normal",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check length $input - once",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $items - normal": {
+      "main": [
+        [
+          {
+            "node": "Output items correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $items - execute once": {
+      "main": [
+        [
+          {
+            "node": "Output items correct1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $input - normal": {
+      "main": [
+        [
+          {
+            "node": "Output items correct5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $input - once": {
+      "main": [
+        [
+          {
+            "node": "Output items correct4",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $items - normal1": {
+      "main": [
+        [
+          {
+            "node": "Output items correct2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check length $items - executeOnce": {
+      "main": [
+        [
+          {
+            "node": "Output items correct3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct1": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct2": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct3": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct4": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Output items correct5": {
+      "main": [
+        [
+          {
+            "node": "length correct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customer Datastore (n8n training)1": {
+      "main": [
+        [
+          {
+            "node": "Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data": {
+      "main": [
+        [
+          {
+            "node": "IF - normal",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF - execute once",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - normal": {
+      "main": [
+        [
+          {
+            "node": "All Good",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - execute once": {
+      "main": [
+        [
+          {
+            "node": "All Good",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "IF - normal1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "IF - execute once1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - normal1": {
+      "main": [
+        [
+          {
+            "node": "All Good",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF - execute once1": {
+      "main": [
+        [
+          {
+            "node": "All Good",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop and Error1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "d2f6e25c-3f7e-4824-8ab9-ed05bda4aaaf",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

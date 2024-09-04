@@ -1,0 +1,55 @@
+{
+  "id": "1024",
+  "name": "Infinite waiter",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b7b9c4b0-5bac-4c02-9e2a-79404ba4a6ef",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        900,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "id": "bdeadbff-554d-4078-aae7-4ec8cc4679ed",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        320
+      ],
+      "webhookId": "95838dc9-4e1b-4c0e-aa00-d91284a2f35c"
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 0,
+  "versionId": "5434707c-ee24-4c3a-95db-7a89809f3e25",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "zXNsrS1aRGM3o7Hu",
+  "name": "Bitly account 2",
+  "type": "bitlyApi",
+  "data": {
+    "accessToken": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

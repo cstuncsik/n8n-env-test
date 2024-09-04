@@ -1,0 +1,146 @@
+{
+  "tags": [
+    {
+      "id": "1",
+      "name": "auto"
+    },
+    {
+      "id": "2",
+      "name": "finance"
+    },
+    {
+      "id": "3",
+      "name": "marketing"
+    },
+    {
+      "id": "4",
+      "name": "development"
+    },
+    {
+      "id": "5",
+      "name": "sales"
+    },
+    {
+      "id": "6",
+      "name": "new business"
+    },
+    {
+      "id": "7",
+      "name": "customer success"
+    },
+    {
+      "id": "8",
+      "name": "website"
+    },
+    {
+      "id": "9",
+      "name": "nested"
+    },
+    {
+      "id": "10",
+      "name": "transporeon"
+    },
+    {
+      "id": "YHCQBlnI2ePNjn61",
+      "name": "pinned"
+    },
+    {
+      "id": "7PbQyEzsuEVEkMFc",
+      "name": "nutag"
+    }
+  ],
+  "mappings": [
+    {
+      "workflowId": "1012",
+      "tagId": 9
+    },
+    {
+      "workflowId": "1012",
+      "tagId": 10
+    },
+    {
+      "workflowId": "1039",
+      "tagId": 2
+    },
+    {
+      "workflowId": "XDyIZzFWULs5gqZZ",
+      "tagId": "YHCQBlnI2ePNjn61"
+    },
+    {
+      "workflowId": "XDyIZzFWULs5gqZZ",
+      "tagId": 4
+    },
+    {
+      "workflowId": "n8tjvXsVk2XYnT8V",
+      "tagId": 4
+    },
+    {
+      "workflowId": "nWzcnYUb3AVaZpHG",
+      "tagId": "YHCQBlnI2ePNjn61"
+    },
+    {
+      "workflowId": "1037",
+      "tagId": 4
+    },
+    {
+      "workflowId": "4q3CORHhdWrn38dT",
+      "tagId": 1
+    },
+    {
+      "workflowId": "4q3CORHhdWrn38dT",
+      "tagId": 4
+    },
+    {
+      "workflowId": "4q3CORHhdWrn38dT",
+      "tagId": 2
+    },
+    {
+      "workflowId": "hm5nnHB7si6v3u9O",
+      "tagId": 1
+    },
+    {
+      "workflowId": "hm5nnHB7si6v3u9O",
+      "tagId": 7
+    },
+    {
+      "workflowId": "hm5nnHB7si6v3u9O",
+      "tagId": 2
+    },
+    {
+      "workflowId": "hm5nnHB7si6v3u9O",
+      "tagId": 3
+    },
+    {
+      "workflowId": "fGNYufZFmt9XRsNy",
+      "tagId": 4
+    },
+    {
+      "workflowId": "tzq1K1HPbOpBxhxe",
+      "tagId": 4
+    },
+    {
+      "workflowId": "tzq1K1HPbOpBxhxe",
+      "tagId": 7
+    },
+    {
+      "workflowId": "hDPpIwdXDSlXucJ4",
+      "tagId": 1
+    },
+    {
+      "workflowId": "hDPpIwdXDSlXucJ4",
+      "tagId": 7
+    },
+    {
+      "workflowId": "AHBt5a58CR7ggLOg",
+      "tagId": 1
+    },
+    {
+      "workflowId": "oIbmFQEtN1KC454F",
+      "tagId": 1
+    },
+    {
+      "workflowId": "oIbmFQEtN1KC454F",
+      "tagId": 4
+    }
+  ]
+}

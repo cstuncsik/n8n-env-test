@@ -1,0 +1,15 @@
+{
+  "id": "hm5nnHB7si6v3u9O",
+  "name": "Test tags",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "fcddd5c5-5ac2-4141-9d54-fc12244d0992",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

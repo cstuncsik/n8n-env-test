@@ -1,0 +1,13 @@
+{
+  "id": "ZELlnfoMOHm3G0Yz",
+  "name": "Google Calendar account",
+  "type": "googleCalendarOAuth2Api",
+  "data": {
+    "clientId": "",
+    "clientSecret": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "CWLyvWiG5tyNSC3l",
+  "name": "Infiscal secret",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "={{ $secrets.infisical.DB_USERNAME }}",
+    "password": "={{ $secrets.infisical.DB_PASSWORD }}"
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

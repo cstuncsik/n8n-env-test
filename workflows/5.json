@@ -1,0 +1,135 @@
+{
+  "id": "5",
+  "name": "Readonly nodes",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b9c8df76-1925-426d-ae9c-72110d5bdc39",
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field\n// called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "id": "3cc04be7-3d56-497a-ad06-369884b038a5",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        600,
+        320
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d580b4d8-001b-4ffb-a334-e6ebb285217d",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        820,
+        320
+      ]
+    },
+    {
+      "parameters": {
+        "otherOptions": {
+          "icon_emoji": ""
+        },
+        "attachments": [
+          {
+            "text": "",
+            "title": ""
+          }
+        ],
+        "blocksUi": {
+          "blocksValues": [
+            {
+              "elementsUi": {
+                "elementsValues": [
+                  {
+                    "confirmUi": {
+                      "confirmValue": {
+                        "titleUi": {},
+                        "textUi": {},
+                        "confirmTextUi": {},
+                        "denyUi": {},
+                        "style": "default"
+                      }
+                    }
+                  },
+                  {
+                    "type": "button",
+                    "text": "",
+                    "emoji": false,
+                    "actionId": "",
+                    "url": "",
+                    "value": "",
+                    "style": "default",
+                    "confirmUi": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "id": "67abc346-5a5d-45ed-85e9-60563f134145",
+      "name": "Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1040,
+        160
+      ]
+    }
+  ],
+  "connections": {
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "d76f4642-0be2-4060-a034-03a9e1f76ba6",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

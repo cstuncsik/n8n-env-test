@@ -1,0 +1,13 @@
+{
+  "id": "ssCWDhrBY6WLQ1KF",
+  "name": "Postgres X",
+  "type": "postgres",
+  "data": {
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

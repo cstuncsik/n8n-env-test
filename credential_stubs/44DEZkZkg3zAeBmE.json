@@ -1,0 +1,12 @@
+{
+  "id": "44DEZkZkg3zAeBmE",
+  "name": "Action Network Cred from a member",
+  "type": "actionNetworkApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "tgpiwOavspDdLgJF",
+  "name": "Postgres account",
+  "type": "postgres",
+  "data": {
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

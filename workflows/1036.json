@@ -1,0 +1,118 @@
+{
+  "id": "1036",
+  "name": "Items count test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f3798b2f-f93b-455f-9874-d196beee0738",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "=names",
+              "value": "={{ $json.name.split(' ') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3f0ba2fb-1033-45fb-9d99-1f14465ce500",
+      "name": "Set all",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        820,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "names",
+              "value": "={{ $json.name.split(' ') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "913850c6-1f3c-4240-9130-0a355ee14224",
+      "name": "Set one",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        820,
+        660
+      ],
+      "executeOnce": true
+    },
+    {
+      "parameters": {},
+      "id": "5ef4cb52-32c8-48c6-9b0e-969beaa2ea54",
+      "name": "Merge",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        580
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Set all",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set one",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set all": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set one": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "9d42146d-4bcf-45b2-a343-be9406592801",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

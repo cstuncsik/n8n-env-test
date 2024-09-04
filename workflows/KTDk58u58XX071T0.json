@@ -1,0 +1,27 @@
+{
+  "id": "KTDk58u58XX071T0",
+  "name": "Workflow created by admin user",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "c4815d17-8f49-481d-9752-a2d8599e60cf",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        640,
+        520
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "f92d9533-315a-4438-a4b5-72800d470515",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "cstuncsik@vivaldi.net"
+  }
+}

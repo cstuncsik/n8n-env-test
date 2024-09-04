@@ -1,0 +1,52 @@
+{
+  "id": "1017",
+  "name": "Waiter",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "3da350b7-14d0-437d-a65a-8c131640bd18",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        80
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "515196d6-4b9c-40f4-924f-b69e398be974",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        120,
+        80
+      ],
+      "webhookId": "d8e343ef-7910-482e-bfa2-b45594bb4e7c"
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "callerPolicy": "any"
+  },
+  "triggerCount": 0,
+  "versionId": "2302a0ef-5dd4-42f6-9cb7-3754db15cdc6",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "2RVcRgcHZzOIwJ0u",
+  "name": "AgileCRM account",
+  "type": "agileCrmApi",
+  "data": {
+    "email": "",
+    "apiKey": "",
+    "subdomain": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "M21XgKJsWGhBy121",
+    "teamName": "Test cross-sharing"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "YTNKVoK3txEIM7iv",
+  "name": "My workflow 37",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "d2360ee5-3dc4-4301-a464-6ca0b2b26582",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        500,
+        520
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "a43bb17a-c318-403d-9d8c-a51f1f2af16e",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

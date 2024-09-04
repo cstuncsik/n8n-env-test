@@ -1,0 +1,13 @@
+{
+  "id": "zTVmSpYoEMouITgl",
+  "name": "Postgres account",
+  "type": "postgres",
+  "data": {
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

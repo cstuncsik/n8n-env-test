@@ -1,0 +1,27 @@
+{
+  "id": "P1SMEGvVhAbBhmVu",
+  "name": "Execute Workflow trigger",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a7140bd9-46ae-4b5d-bd60-ca9052e1ec4b",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        380
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "a5048fa5-a3da-403e-8889-a2c24edf7e05",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

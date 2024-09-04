@@ -1,0 +1,12 @@
+{
+  "id": "ZJLwuTEfcHE5nu6g",
+  "name": "Autopilot account",
+  "type": "autopilotApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

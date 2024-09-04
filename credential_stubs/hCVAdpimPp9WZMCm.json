@@ -1,0 +1,12 @@
+{
+  "id": "hCVAdpimPp9WZMCm",
+  "name": "Postgres X",
+  "type": "postgres",
+  "data": {
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "cstuncsik@vivaldi.net"
+  }
+}

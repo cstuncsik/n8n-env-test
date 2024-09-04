@@ -1,0 +1,95 @@
+{
+  "id": "1042",
+  "name": "Expression with pinned data",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "id": "576fa2c9-a51d-469f-bd26-fccbd8ddef24",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f779fe50-3ae9-4a96-9e12-8dfb70cc2fcd",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        680,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "value": "={{ $('Schedule Trigger').item.json.Month }}"
+            },
+            {
+              "name": "propertyName1",
+              "value": "={{ $node[\"Schedule Trigger\"].json.Month }}"
+            },
+            {
+              "name": "propertyName2",
+              "value": "={{ $('Schedule Trigger').first().json.Month }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "14938a42-7cde-4a7c-84a4-b1d409abfa3d",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        880,
+        460
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "607896c0-d96f-4496-bfc7-f292ada5e294",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

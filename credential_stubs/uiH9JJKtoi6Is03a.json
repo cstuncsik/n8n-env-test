@@ -1,0 +1,14 @@
+{
+  "id": "uiH9JJKtoi6Is03a",
+  "name": "Adalo account",
+  "type": "adaloApi",
+  "data": {
+    "apiKey": "",
+    "appId": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

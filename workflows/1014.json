@@ -1,0 +1,13 @@
+{
+  "id": "1014",
+  "name": "Large data",
+  "nodes": [],
+  "connections": {},
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "f6fab4ce-b438-4480-b7e1-053c3e24e78f",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

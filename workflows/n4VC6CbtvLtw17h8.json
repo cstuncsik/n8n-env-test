@@ -1,0 +1,29 @@
+{
+  "id": "n4VC6CbtvLtw17h8",
+  "name": "No trigger",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "3656fedf-6fec-459f-8887-e36da80758f2",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        960,
+        520
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "36de0e0c-1d2b-43ee-af79-ca7d7f403682",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

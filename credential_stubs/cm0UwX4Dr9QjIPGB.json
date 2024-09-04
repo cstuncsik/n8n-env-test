@@ -1,0 +1,13 @@
+{
+  "id": "cm0UwX4Dr9QjIPGB",
+  "name": "Adalo account 3",
+  "type": "adaloApi",
+  "data": {
+    "apiKey": "",
+    "appId": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

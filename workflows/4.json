@@ -1,0 +1,319 @@
+{
+  "id": "4",
+  "name": "Mapping test",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n      list: [1,2,3],\n      record: { name: 'Joe', address: { city: \"Budapest\"} },\n      myNumber: 123,\n      myStringNumber: '456',\n      myStringText: 'abc',\n      nil: null,\n      bar: \"bar\",\n      bool: true,\n      d: undefined,\n      deep: {\n        list: ['a', 'b', 'c']\n      },\n      emptyString: \"\",\n      noSpace: \"uyefgfuysgvefuywgfdiewi6tg7efiw76efthd8ew76trdhuytwfedh65wdefhu6d5ewfhgd6uwrfdew76rfdew6rdwefg6utdwerfudthewrfgdwetyrfdewgtyrdefwgytrdwefgytderfyetwrdfgw7e65drg7e65fgdew765fdweg765dewfg765dwefg76dwe5fg76dew5fdwe765fdewg765fdwg765edwfg765dewf765dewf76dwe5fg76dwgf\"\n  }\n},\n       {\n  json: {\n      list: [4,5,6,7],\n      record: { name: 'John', address: { country: \"Hungary\"} },\n      foo: 5,\n      myNumber: 456,\n      myStringNumber: '789',\n      myStringText: 'def',\n      nil: null,\n      bool: false,\n      d: undefined,\n      deep: {\n        list: ['d', 'e', 'f']\n      },\n      emptyString: \"\",\n      noSpace: \"ejygfejybefkjbhouweybfreo8u6erybofuye4gbfouybegriuygeriuyfgbrseiuygtiresufgynfserui6fersinuyfesrbginutygefnsruygfinuyegrnfiufetsyginfusetygniufyregfnetuysgfeusygefsurygfrenuyegfrniuyegrnfiuyefgrnuifyesrginfueyrgsnfuysefgriufseyniufesygnfeiuygfeuysegnuytfegefsrniuygefsiui6esinuef6inef6nuiefyginefurygefnruyefginuyfergiuyfergniuyfesrgniuygneifruy\"\n  }\n}]"
+      },
+      "id": "aa18762f-9126-4d2a-8c3f-3182d3152285",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -20,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "b479097f-1fea-4950-915f-06bda8dc569f",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        320,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "9bd0dabd-7c62-4690-b152-0fb4b816103a",
+      "name": "On clicking 'execute'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -340,
+        640
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "1bddc63e-324a-4652-9d51-69f9d4c56158",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        140,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "options": {}
+      },
+      "id": "2aa9d5a8-a0a8-4f2c-9b9e-98a93cbf46e5",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -20,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "4aabfc12-32ef-4ef1-a9a6-3da273fd7855",
+      "name": "Set2",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        180,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://jsonplaceholder.typicode.com/posts",
+        "options": {}
+      },
+      "id": "5f75d1ba-f768-4c7e-9abb-fbf286fbf2a6",
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -100,
+        960
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "beaaaac6-2369-4944-b2f1-1c556c26b31a",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        80,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "f06ca8ab-0145-4ae4-bbe1-52768b6a201f",
+      "name": "Set3",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        320,
+        960
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: { name: 'John', age: 22, hobbies: ['surfing', 'traveling'] }\n},\n       {\n  json: { name: 'Joe', age: 33, hobbies: ['skateboarding', 'gaming'] }\n}]"
+      },
+      "id": "0d2097d3-b513-4c58-9ab9-af91bae8099c",
+      "name": "Code1",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        40,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "9d13ff80-383f-4661-917f-53b4632c5889",
+      "name": "Set4",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "249e3b1b-0451-4fcb-b73b-08e051aabe0c",
+      "name": "Set5",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -260,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  { json: {headers: {host: 'host 1'}}},\n  { json: {headers: {host: 'host 2'}}}\n]"
+      },
+      "id": "9a9766a8-f547-4714-ae0a-b1d01c57c82d",
+      "name": "Code2",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        -620,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "02b99ced-b13b-44b2-b942-49efb04b2650",
+      "name": "Set6",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -480,
+        480
+      ]
+    }
+  ],
+  "connections": {
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "On clicking 'execute'": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Set5",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Set2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Set3",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code1": {
+      "main": [
+        [
+          {
+            "node": "Set4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code2": {
+      "main": [
+        [
+          {
+            "node": "Set6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 0,
+  "versionId": "3dfc5eba-149a-4ebc-bf59-bcf3c7ff36e2",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

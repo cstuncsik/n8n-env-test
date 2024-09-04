@@ -1,0 +1,81 @@
+{
+  "id": "Xaz2raW4IpY9xH9v",
+  "name": "My workflow 34",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "4bf6571a-c2e5-4c98-bee7-09e8936f4051",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        820,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nthrow Error('error'))\n\nreturn $input.all();"
+      },
+      "id": "1d79f308-1b3c-4a5e-85e8-bade655cfc66",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1040,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "path": "6f3e0dbe-d4f8-42da-b0cb-cab7ae9c4476",
+        "options": {}
+      },
+      "id": "fe3e7170-2e91-432e-9a9a-c4a77a94833e",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        600,
+        520
+      ],
+      "webhookId": "6f3e0dbe-d4f8-42da-b0cb-cab7ae9c4476"
+    }
+  ],
+  "connections": {
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 1,
+  "versionId": "00dc1e0c-ee67-428e-b3d1-81cd403da02e",
+  "owner": {
+    "type": "team",
+    "teamId": "ExuBYnufY1IQ2HvF",
+    "teamName": "Marketing"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "4q3CORHhdWrn38dT",
+  "name": "My workflow 17",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "06c0de37-c937-4aa1-b301-efe6f2a17d1c",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

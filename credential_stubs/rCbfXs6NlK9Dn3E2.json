@@ -1,0 +1,13 @@
+{
+  "id": "rCbfXs6NlK9Dn3E2",
+  "name": "Action Network account 3",
+  "type": "actionNetworkApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "M21XgKJsWGhBy121",
+    "teamName": "Test cross-sharing"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "id": "XDyIZzFWULs5gqZZ",
+  "name": "Binary + pin",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "8b54a74a-11f2-4dcd-8ffa-d12599ce6849",
+      "name": "When clicking \"Test Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        560,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "toJson",
+        "options": {}
+      },
+      "id": "2419189f-4d1f-409c-8c7f-91578bfd28c5",
+      "name": "Convert to File",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1,
+      "position": [
+        820,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "binary",
+              "stringValue": "={{ $binary.data.fileName }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "4c2d57ab-07fc-47c0-b229-a2c8a6f924c4",
+      "name": "Edit Fields",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        1100,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Test Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Convert to File",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to File": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "8d866dd8-f783-437c-8bb9-635a1fe4728d",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

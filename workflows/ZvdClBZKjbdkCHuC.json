@@ -1,0 +1,193 @@
+{
+  "id": "ZvdClBZKjbdkCHuC",
+  "name": "My workflow 12",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://news.ycombinator.com/",
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        120,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "e29b9686-1ea9-415e-9669-b0370ba31477"
+    },
+    {
+      "parameters": {
+        "amount": 5,
+        "unit": "minutes"
+      },
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "position": [
+        280,
+        560
+      ],
+      "webhookId": "e5f84b2f-2568-4f5b-a72b-ed54838c768b",
+      "typeVersion": 1,
+      "id": "e3985295-f64d-4999-9dd6-bdcf26a610d1"
+    },
+    {
+      "parameters": {
+        "url": "https://news.ycombinator.com/",
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [
+        480,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "b49efef8-a32b-429f-8948-98ee9fad7e7b"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$node[\"HTTP Request\"].json[\"data\"]}} {{$node[\"HTTP Request\"].json[\"data\"]}}",
+              "value2": "="
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        700,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "baea3f69-a350-4913-bba3-09d59c062e7d"
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "everyX",
+              "value": 5,
+              "unit": "minutes"
+            }
+          ]
+        }
+      },
+      "name": "Cron",
+      "type": "n8n-nodes-base.cron",
+      "position": [
+        -80,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "b1ed3fd0-c6c4-4975-99a4-10b46cfc1fad"
+    },
+    {
+      "parameters": {
+        "chatId": "1234",
+        "text": "Something got changed",
+        "additionalFields": {}
+      },
+      "name": "Telegram1",
+      "type": "n8n-nodes-base.telegram",
+      "position": [
+        920,
+        640
+      ],
+      "typeVersion": 1,
+      "id": "868e466c-e450-458f-aa5c-fdb69e8f830b",
+      "credentials": {
+        "telegramApi": {
+          "id": "4",
+          "name": "n8n test bot"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        920,
+        440
+      ],
+      "typeVersion": 1,
+      "id": "d5068297-3894-4961-a6fa-8d21071ee535"
+    }
+  ],
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cron": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "eba2a60a-188f-4efc-b9f7-45025555d479"
+}

@@ -1,0 +1,120 @@
+{
+  "id": "2",
+  "name": "Improve visibility of Trigger NDV listening state",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "bbdf7138-7c9e-4073-a147-f0ec4b0e6fae",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        80,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "path": "b09b94e7-5a46-4b4c-b181-3b2e2a646de1",
+        "options": {}
+      },
+      "id": "ba041923-5319-4680-893c-e73111848e65",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        80,
+        420
+      ],
+      "webhookId": "b09b94e7-5a46-4b4c-b181-3b2e2a646de1"
+    },
+    {
+      "parameters": {},
+      "id": "fb4ee9e7-d0fd-4fdd-832d-57ed5c6fd3e4",
+      "name": "When Called By Another Workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        80,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "d81afa24-cec9-494f-900e-495a0f5fec0b",
+      "name": "Error Trigger",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        300,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "triggerOn": "file",
+        "path": "/data/test.txt",
+        "options": {}
+      },
+      "id": "16d850f0-7d95-48fb-8db8-100ea2c661bb",
+      "name": "Local File Trigger",
+      "type": "n8n-nodes-base.localFileTrigger",
+      "typeVersion": 1,
+      "position": [
+        300,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyHour"
+            }
+          ]
+        },
+        "filters": {}
+      },
+      "id": "5a0bf365-86ea-4e08-a278-f6ed6112ac14",
+      "name": "Gmail Trigger",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1,
+      "position": [
+        300,
+        220
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "2",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "61c17602-13b9-47b9-8b81-0287a9192e23",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        80,
+        60
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "saveExecutionProgress": "DEFAULT",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 0,
+  "versionId": "518bff9d-18ab-4c09-991f-954b002eb8a2",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

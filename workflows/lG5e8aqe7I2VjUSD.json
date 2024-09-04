@@ -1,0 +1,53 @@
+{
+  "id": "lG5e8aqe7I2VjUSD",
+  "name": "Use Notion",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "5fce564f-f1ac-4488-8bc2-e38f5892f188",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        680,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "user",
+        "operation": "getAll"
+      },
+      "id": "cf9c38cc-0f91-4621-85bc-02d550c4c9a7",
+      "name": "Notion",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.1,
+      "position": [
+        900,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Notion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "f44f5e35-c6da-4c8e-a914-36ac478aea88",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

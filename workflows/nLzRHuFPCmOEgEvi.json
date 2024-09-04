@@ -1,0 +1,799 @@
+{
+  "id": "nLzRHuFPCmOEgEvi",
+  "name": "My workflow 11",
+  "nodes": [
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $node.Webhook.json.body.params.length }}",
+              "operation": "equal",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "fb476536-44f7-414e-ad89-f6562c06f191",
+      "name": "if has correct number of params",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2900,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": {
+          "string": [
+            {
+              "name": "username",
+              "value": "={{ $node.Webhook.json.body.params[0] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "0bfba9ab-232b-4bad-8396-4c02452d13c6",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        -2660,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Starting process.. To debug, you can find execution here {{ $vars.instance_url }}/workflow/{{ $workflow.id }}/executions/{{ $execution.id }}",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "387454c5-9837-4cbc-bc16-fb9455fe06cc",
+      "name": "Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -3120,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "Invalid number of params",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "b4c62b06-9a9f-44bf-ac3e-7f6d6a49b7a2",
+      "name": "Error",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -2740,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Found user `{{ $json.username }}` with user id  `{{ $json.userId }}`, `{{ $json.accountid ? `account id ` + $json.accountid : 'no account' }}`, `{{ $json.instanceid ? `instance id ` + $json.instanceid : 'no instance' }}` and `{{ $json.subscriptionId ? `subscription id ` + $json.subscriptionId : 'no subscription' }}`",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "03df4446-f194-478e-a12d-e3c54f6264ac",
+      "name": "Found user",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -2000,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "311a065f-1c5c-4bfd-9a4a-2adecd3fecd4",
+      "name": "if found user",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -2220,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "Could not find user",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "401c1f5f-9fb4-4f50-8435-4c01829bd933",
+      "name": "Could not find user",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -2060,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=select upu .username, upu .email,upu .id as \"userId\",a2.id as accountId,a2 .\"isSetup\" as \"isSetup\",abd .status as billingStatus,abd.\"cancellationEffectiveDate\",abd.\"subscriptionId\",abd.\"customerSince\",i2.status as instanceStatus, i2.id as instanceId, i2.\"configuration\" as instanceConfig from up_users upu full outer join account a2 on upu .\"accountId\" = a2.id full outer join account_billing_data abd on a2.id = abd .\"accountId\" full outer join \"instance\" i2 on i2.\"accountId\" = a2 .id where upu .username = '{{$json[\"username\"]}}';",
+        "additionalFields": {}
+      },
+      "name": "Get user info",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [
+        -2440,
+        740
+      ],
+      "id": "c8228c27-883d-4c44-83a9-6e97ffeec5c4",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"Get user info\"].json.subscriptionId }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "1808a355-fd61-48f9-8c56-bc03dde4336c",
+      "name": "if not empty",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1780,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=According to our own db, subscription `{{ $node[\"Get user info\"].json.subscriptionId }}` should be  `{{ $node[\"Get user info\"].json.billingstatus }}`.. You can view/manage it here in Paddle https://vendors.paddle.com/subscriptions/customers/manage/{{ $node[\"Get user info\"].json.subscriptionId }}. Please cancel if active.",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "610ab1f7-64de-412b-acdc-cf33d4b5d08b",
+      "name": "Manage subscription",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -1540,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Deleting instance.. ",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "5a16155a-6f59-4e17-8502-97d8974aaaeb",
+      "name": "Deleting instance",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        -1060,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"Get user info\"].json.instanceid }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "c5decbdf-d6ad-4726-9e65-8fea81925a94",
+      "name": "If has instance",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -1320,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "queue": "to-kubernetes",
+        "sendInputData": false,
+        "message": "={\n\"action\": \"delete\",\n\"user\": \"{{ $node.Set.json.username }}\"\n}",
+        "options": {
+          "arguments": {
+            "argument": [
+              {
+                "key": "x-queue-type",
+                "value": "quorum"
+              }
+            ]
+          }
+        }
+      },
+      "name": "Delete instance",
+      "type": "n8n-nodes-base.rabbitmq",
+      "typeVersion": 1,
+      "position": [
+        -840,
+        600
+      ],
+      "id": "08d8df1c-df18-468c-9750-837cb216f73a",
+      "credentials": {
+        "rabbitmq": {
+          "id": "6",
+          "name": "rabbit-n8n-production"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "unit": "minutes"
+      },
+      "id": "5b9eb184-cd50-43e2-9c7c-c40148cdca79",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        -660,
+        600
+      ],
+      "webhookId": "c8fdaff4-3e5b-4ce8-8818-81a23fcb7fe0"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $node.Set.json.username }}.app.n8n.cloud/rest/settings",
+        "options": {}
+      },
+      "id": "0235af25-ec37-4c84-a6cc-40389784e20f",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        -440,
+        600
+      ],
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.error.message }}",
+              "operation": "contains",
+              "value2": "404"
+            }
+          ]
+        }
+      },
+      "id": "e9d4cc65-6111-4bc6-a15e-49947abd1ceb",
+      "name": "if deleted",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        -220,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Instance deleted. Endpoint is now returning 404.. Now will remove references from DB.",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "3806dd35-7649-4eeb-a4ca-2c93bc939ce9",
+      "name": "Deleted",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        20,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Something went wrong.. Instance not yet deleted after 1m... Endpoint is still returning response.. Please create helpdesk ticket.. (Stopping here)",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "9640f833-8d1b-42f5-94ba-ea6800c7a3e7",
+      "name": "Not deleted",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        20,
+        720
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=delete from account_user_role where \"userId\" =  {{ $node[\"Get user info\"].json.userId }} and \"accountId\" = {{ $node[\"Get user info\"].json.accountid }}; delete from account where id = {{ $node[\"Get user info\"].json.accountid }}; delete from up_users where \"id\" =  {{ $node[\"Get user info\"].json.userId }};",
+        "additionalFields": {}
+      },
+      "id": "5d2aff33-0273-4fdd-8954-5427015ff4da",
+      "name": "Postgres",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $node[\"Get user info\"].json.accountid }}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "894f4991-7d90-4556-a97f-710eae86f0ff",
+      "name": "if has account",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        240,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "value": "={{ $node.Webhook.json.body.channel_id }}",
+          "mode": "id"
+        },
+        "text": "=Done. Removed user from db.",
+        "otherOptions": {
+          "thread_ts": {
+            "replyValues": {
+              "thread_ts": "={{ $node.Webhook.json.body.thread_ts }}"
+            }
+          }
+        }
+      },
+      "id": "84fd251b-7b30-41fe-92d9-fae4cb8f6925",
+      "name": "Done",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2,
+      "position": [
+        660,
+        540
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "=delete from up_users where \"id\" =  {{ $node[\"Get user info\"].json.userId }};",
+        "additionalFields": {}
+      },
+      "id": "3d8872a1-f008-4488-b2e8-24675b616a30",
+      "name": "Postgres1",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [
+        460,
+        680
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {},
+      "id": "5158d91d-87a3-4832-ba8e-733b3c754aff",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        -3420,
+        920
+      ]
+    },
+    {
+      "parameters": {
+        "fields": {
+          "values": [
+            {
+              "name": "body",
+              "type": "objectValue",
+              "objectValue": "={{ $json }}"
+            }
+          ]
+        },
+        "include": "none",
+        "options": {}
+      },
+      "id": "36cd50db-7445-4b04-8d08-4adc183ace2d",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [
+        -3200,
+        920
+      ]
+    }
+  ],
+  "connections": {
+    "if has correct number of params": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack": {
+      "main": [
+        [
+          {
+            "node": "if has correct number of params",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Found user": {
+      "main": [
+        [
+          {
+            "node": "if not empty",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if found user": {
+      "main": [
+        [
+          {
+            "node": "Found user",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Could not find user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get user info": {
+      "main": [
+        [
+          {
+            "node": "if found user",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if not empty": {
+      "main": [
+        [
+          {
+            "node": "Manage subscription",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "If has instance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manage subscription": {
+      "main": [
+        [
+          {
+            "node": "If has instance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deleting instance": {
+      "main": [
+        [
+          {
+            "node": "Delete instance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If has instance": {
+      "main": [
+        [
+          {
+            "node": "Deleting instance",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "if has account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete instance": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "if deleted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if deleted": {
+      "main": [
+        [
+          {
+            "node": "Deleted",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not deleted",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Deleted": {
+      "main": [
+        [
+          {
+            "node": "if has account",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres": {
+      "main": [
+        [
+          {
+            "node": "Done",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "if has account": {
+      "main": [
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Postgres1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres1": {
+      "main": [
+        [
+          {
+            "node": "Done",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set": {
+      "main": [
+        [
+          {
+            "node": "Get user info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "b8946930-b2bb-4960-99f9-b1bc239adcb0",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "7SlgSITcukedjhwy",
+  "name": "Unnamed credential by member",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "ECjm8aqDLQ1Eytpu",
+  "name": "My workflow 36",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "62dffc60-269e-47c4-9e3e-abd21ef5f84d",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        500,
+        520
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "21317407-f302-476b-b776-25d33c0d1a35",
+  "owner": {
+    "type": "team",
+    "teamId": "yciRBiOFJdTFDWis",
+    "teamName": "🤟Devx"
+  }
+}

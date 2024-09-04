@@ -1,0 +1,60 @@
+{
+  "id": "tn2LCZOWEA0Hb3AE",
+  "name": "WF by instance owner",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "9618454f-e8c0-49d3-875a-f5b96c5c2ef9",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        680,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {}
+      },
+      "id": "a4a9d437-0126-4d90-9008-978e9adec172",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        520
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "1gfhYJj3LPEkdVWD",
+          "name": "Unshared"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "ab221c53-0cc5-491c-9491-1d4813ad5891",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

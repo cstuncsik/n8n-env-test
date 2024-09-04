@@ -1,0 +1,25 @@
+{
+  "id": "1029",
+  "name": "My workflow 5",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "c8e8b272-6719-49db-8487-de4ec4a1e002",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        560,
+        580
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "79499843-41fe-4c35-8afd-968de8bafd32",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

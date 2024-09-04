@@ -1,0 +1,12 @@
+{
+  "id": "i3VUdPM07ACyUBHR",
+  "name": "Action Network account 2",
+  "type": "actionNetworkApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

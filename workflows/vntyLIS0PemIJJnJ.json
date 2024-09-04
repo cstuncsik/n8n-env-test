@@ -1,0 +1,27 @@
+{
+  "id": "vntyLIS0PemIJJnJ",
+  "name": "Workflow created by member",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1fe7f520-4d9e-4782-bab8-b643d0157def",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        620,
+        460
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "815e73d8-b7a9-478a-b682-7fb056166cf2",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

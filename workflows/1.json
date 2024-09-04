@@ -1,0 +1,96 @@
+{
+  "id": "1",
+  "name": "Input error test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "2bfe1f10-a309-4ab8-bb7a-ce041cc54a1b",
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        300,
+        400
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "800aa2d1-df73-4484-9596-0f64014374aa",
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        960,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "items"
+      },
+      "id": "64cb760b-e7a4-49d2-b812-3d38211b52bf",
+      "name": "MyFunction1",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        520,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "d1ab36e1-689f-44a2-8ebc-4e55c2cc60f8",
+      "name": "Set1",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        740,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          {
+            "node": "MyFunction1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MyFunction1": {
+      "main": [
+        [
+          {
+            "node": "Set1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set1": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "7370fcae-c555-4767-984a-e7f6fc6176e8",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

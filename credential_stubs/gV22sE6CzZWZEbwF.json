@@ -1,0 +1,12 @@
+{
+  "id": "gV22sE6CzZWZEbwF",
+  "name": "Notion API credential by member",
+  "type": "notionApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

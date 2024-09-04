@@ -1,0 +1,42 @@
+{
+  "id": "1027",
+  "name": "A webhook",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "145a1276-c690-4d8b-9fad-984b3a6e8035",
+        "options": {}
+      },
+      "id": "9855441d-0099-4945-bed0-c0119ed50eb4",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        520,
+        580
+      ],
+      "webhookId": "145a1276-c690-4d8b-9fad-984b3a6e8035"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "61f2bbcc-f66a-4cfa-b736-153c046f7306",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        560,
+        960
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {},
+  "triggerCount": 1,
+  "versionId": "53820b31-8f9e-4f9c-a130-9a9a3cc84b30",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

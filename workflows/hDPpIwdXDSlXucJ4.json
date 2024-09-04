@@ -1,0 +1,31 @@
+{
+  "id": "hDPpIwdXDSlXucJ4",
+  "name": "My workflow 28",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "4fed21b9-0e0c-4577-9867-810128f5eb74",
+        "options": {}
+      },
+      "id": "602f131a-2da2-490b-aa28-ab1bcf5dde4a",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        520,
+        80
+      ],
+      "webhookId": "4fed21b9-0e0c-4577-9867-810128f5eb74"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 1,
+  "versionId": "bb9804b4-cb9b-41e5-b0b8-ad41b69f2b63",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "id": "LX5slpUCAArxqyHA",
+  "name": "Trigger WF",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "f81f5ff5-066a-40ee-ae9a-d5bb1542c216",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        540,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "workflowId": "ipCenyCjvux1si2b",
+        "options": {}
+      },
+      "id": "8fabedd5-76d8-41b0-a40c-45cd04d6734a",
+      "name": "Execute Workflow",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        760,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 0,
+  "versionId": "e6906e8f-22f9-4a92-ac48-4effa93b341d",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

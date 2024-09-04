@@ -1,0 +1,12 @@
+{
+  "id": "SUuyP4Ww4y7EQs12",
+  "name": "Airtable Personal Access Token account 2",
+  "type": "airtableTokenApi",
+  "data": {
+    "accessToken": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

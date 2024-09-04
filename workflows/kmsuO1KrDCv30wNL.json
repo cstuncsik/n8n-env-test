@@ -1,0 +1,58 @@
+{
+  "id": "kmsuO1KrDCv30wNL",
+  "name": "My workflow 32",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "d5d7a39b-34b2-4264-9242-44c4dd9b1f56",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        600,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "id": "49e4f7ec-3fa9-4fee-a796-3fcd14f8a888",
+      "name": "Bitly",
+      "type": "n8n-nodes-base.bitly",
+      "typeVersion": 1,
+      "position": [
+        820,
+        520
+      ],
+      "credentials": {
+        "bitlyApi": {
+          "id": "d4RvHCQNjgu3jMhu",
+          "name": "Bitly account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Bitly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "181e61b5-870e-413d-8bbd-8f4ad711dd72",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

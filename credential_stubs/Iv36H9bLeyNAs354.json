@@ -1,0 +1,14 @@
+{
+  "id": "Iv36H9bLeyNAs354",
+  "name": "Unnamed credential 5",
+  "type": "httpBasicAuth",
+  "data": {
+    "user": "",
+    "password": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "Ez7lVM435fyuJYBk",
+    "teamName": "🤙 emoji"
+  }
+}

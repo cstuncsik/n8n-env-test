@@ -1,0 +1,54 @@
+{
+  "id": "OfdeYpPCByE7PnOp",
+  "name": "With Execute Workflow node",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e688910d-38e6-4a6a-9246-9a941dc80184",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "source": "parameter",
+        "workflowJson": "{\n  \"meta\": {\n    \"templateCredsSetupCompleted\": true,\n    \"instanceId\": \"cb484ba7b742928a2048bf8829668bed5b5ad9787579adea888f05980292a4a7\"\n  },\n  \"nodes\": [\n    {\n      \"parameters\": {},\n      \"id\": \"d46217cd-2999-467f-95d3-4ad597f3b8f6\",\n      \"name\": \"Execute Workflow Trigger\",\n      \"type\": \"n8n-nodes-base.executeWorkflowTrigger\",\n      \"typeVersion\": 1,\n      \"position\": [\n        780,\n        680\n      ]\n    }\n  ],\n  \"connections\": {},\n  \"pinData\": {}\n}",
+        "options": {}
+      },
+      "id": "adc733e4-3d48-42db-8441-b2e826b97a18",
+      "name": "Execute Workflow",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [
+        680,
+        460
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "731905a2-4263-4dfe-ac8a-1b9004d5d044",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

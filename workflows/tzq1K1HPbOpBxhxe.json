@@ -1,0 +1,15 @@
+{
+  "id": "tzq1K1HPbOpBxhxe",
+  "name": "Generate executions",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 1,
+  "versionId": "76245839-5a71-4b2c-b65f-125687bafd70",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

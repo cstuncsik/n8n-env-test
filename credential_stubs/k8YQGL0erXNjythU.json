@@ -1,0 +1,14 @@
+{
+  "id": "k8YQGL0erXNjythU",
+  "name": "ActiveCampaign account 2",
+  "type": "activeCampaignApi",
+  "data": {
+    "apiUrl": "",
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "M21XgKJsWGhBy121",
+    "teamName": "Test cross-sharing"
+  }
+}

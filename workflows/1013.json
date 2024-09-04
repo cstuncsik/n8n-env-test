@@ -1,0 +1,44 @@
+{
+  "id": "1013",
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "578605f7-81be-432c-8053-59de8fad29f8",
+        "options": {}
+      },
+      "id": "3df8e8b1-cb02-419f-9b0d-60a5e435b7de",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        720,
+        660
+      ],
+      "webhookId": "578605f7-81be-432c-8053-59de8fad29f8"
+    },
+    {
+      "parameters": {
+        "triggerOn": "file",
+        "path": "/data/test.txt",
+        "options": {}
+      },
+      "id": "d231edeb-09a4-43d8-b469-c1bcd7cd00c2",
+      "name": "Local File Trigger",
+      "type": "n8n-nodes-base.localFileTrigger",
+      "typeVersion": 1,
+      "position": [
+        940,
+        660
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {},
+  "triggerCount": 0,
+  "versionId": "2a070097-4c8d-4d6b-afb6-bafc645e451d",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

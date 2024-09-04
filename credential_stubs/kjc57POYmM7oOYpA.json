@@ -1,0 +1,12 @@
+{
+  "id": "kjc57POYmM7oOYpA",
+  "name": "Airtable Cred",
+  "type": "airtableTokenApi",
+  "data": {
+    "accessToken": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

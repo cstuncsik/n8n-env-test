@@ -1,0 +1,62 @@
+{
+  "id": "AHBt5a58CR7ggLOg",
+  "name": "Using infiscal",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "5aa11cae-9a0a-4e14-b3d6-9d5a944ecb3c",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        600,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://webhook.site/564df311-a37b-4eb1-8ea3-0ae7447c2eb6",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "name",
+              "value": "={{ $secrets.infiscal.DB_USERNAME }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b83d6d79-8e32-4a4c-821e-b67d2acb1cb4",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        820,
+        520
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "30826b54-b1f2-4b21-8525-f8df6990770e",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

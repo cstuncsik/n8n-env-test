@@ -1,0 +1,12 @@
+{
+  "id": "d4RvHCQNjgu3jMhu",
+  "name": "Bitly account",
+  "type": "bitlyApi",
+  "data": {
+    "accessToken": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

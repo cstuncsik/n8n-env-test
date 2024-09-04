@@ -1,0 +1,91 @@
+{
+  "id": "8IFYawZ9dKqJu8sT",
+  "name": "Small",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://postman-echo.com/get",
+        "options": {}
+      },
+      "id": "c01a3f9c-87b9-4fbe-92d0-30072fedf8ea",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1740,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "host",
+              "value": "={{ $json.headers.host }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "2cf223df-543a-4f7a-a4f9-7ad289856e50",
+      "name": "Set",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2140,
+        -280
+      ]
+    },
+    {
+      "parameters": {
+        "path": "34961a51-f5ef-45ad-a661-6c7aca2de83a",
+        "options": {}
+      },
+      "id": "99dea43a-ab22-4c99-8528-46b5fdba13fd",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        -340
+      ],
+      "webhookId": "34961a51-f5ef-45ad-a661-6c7aca2de83a"
+    }
+  ],
+  "connections": {
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Set",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveExecutionProgress": true,
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 0,
+  "versionId": "6579c7f9-5d8b-4f22-bae8-d22312070a5d",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

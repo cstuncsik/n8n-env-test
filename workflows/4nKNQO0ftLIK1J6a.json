@@ -1,0 +1,58 @@
+{
+  "id": "4nKNQO0ftLIK1J6a",
+  "name": "Endre's WF",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e9a72ee5-8e5c-46db-9aa8-46e3fc3d48ce",
+      "name": "When clicking \"Test workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "get"
+      },
+      "id": "15bc4f32-b698-4011-bf16-5d670add2a52",
+      "name": "Bitly",
+      "type": "n8n-nodes-base.bitly",
+      "typeVersion": 1,
+      "position": [
+        720,
+        520
+      ],
+      "credentials": {
+        "bitlyApi": {
+          "id": "d4RvHCQNjgu3jMhu",
+          "name": "Bitly account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking \"Test workflow\"": {
+      "main": [
+        [
+          {
+            "node": "Bitly",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "2ac8b6be-9780-49c3-84b8-4fabb592321e",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "frontendre@gmail.com"
+  }
+}

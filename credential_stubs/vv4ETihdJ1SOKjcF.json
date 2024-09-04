@@ -1,0 +1,14 @@
+{
+  "id": "vv4ETihdJ1SOKjcF",
+  "name": "ActiveCampaign account",
+  "type": "activeCampaignApi",
+  "data": {
+    "apiUrl": "",
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "ExuBYnufY1IQ2HvF",
+    "teamName": "Marketing"
+  }
+}

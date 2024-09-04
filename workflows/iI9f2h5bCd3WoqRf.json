@@ -1,0 +1,57 @@
+{
+  "id": "iI9f2h5bCd3WoqRf",
+  "name": "Test workflow with random error",
+  "nodes": [
+    {
+      "parameters": {
+        "jsCode": "const data = $input.all();\n\nconst shouldThrowError = Math.random() < 0.5;\n\nif (shouldThrowError) {\n  throw new Error(\"Error occurred\");\n}\n\nreturn { data };\n"
+      },
+      "id": "ffa9342e-2d2c-4d73-b0d6-34791c1ba6dc",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        460
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "fc2a312a-b885-458c-8931-41b6a4391f81",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        500,
+        460
+      ]
+    }
+  ],
+  "connections": {
+    "Code": {
+      "main": [
+        []
+      ]
+    },
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "da51d568-8b22-4171-bab1-a0fd5474dbf8",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

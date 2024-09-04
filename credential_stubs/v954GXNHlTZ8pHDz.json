@@ -1,0 +1,13 @@
+{
+  "id": "v954GXNHlTZ8pHDz",
+  "name": "Notion account",
+  "type": "notionApi",
+  "data": {
+    "apiKey": ""
+  },
+  "ownedBy": {
+    "type": "team",
+    "teamId": "ExuBYnufY1IQ2HvF",
+    "teamName": "Marketing"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "1025",
+  "name": "Long running",
+  "nodes": [
+    {
+      "parameters": {
+        "url": "https://api.ipify.org?format=json",
+        "options": {}
+      },
+      "id": "a361dbe8-bd46-4a8c-9aa0-3ec753fdeea4",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [
+        1100,
+        580
+      ]
+    },
+    {
+      "parameters": {
+        "path": "d500690b-3f64-4df7-b6b9-08f2bc7a9054",
+        "responseMode": "lastNode",
+        "responseData": "allEntries",
+        "options": {}
+      },
+      "id": "dc907eb7-f8db-47cf-9569-687b17310e55",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        740,
+        580
+      ],
+      "webhookId": "d500690b-3f64-4df7-b6b9-08f2bc7a9054"
+    },
+    {
+      "parameters": {
+        "amount": 30,
+        "unit": "seconds"
+      },
+      "id": "e1e60da1-f463-4d88-a8e6-3aad285ca850",
+      "name": "Wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        920,
+        580
+      ],
+      "webhookId": "3dbf1eb6-cc1f-4899-bd23-e9fd40a27774"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "triggerCount": 1,
+  "versionId": "5f570d78-24fd-4028-ad20-6d6caca3206b",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

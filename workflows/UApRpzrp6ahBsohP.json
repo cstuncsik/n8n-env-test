@@ -1,0 +1,50 @@
+{
+  "id": "UApRpzrp6ahBsohP",
+  "name": "History test",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "fee8afef-5167-4c64-8606-29c30086cd33",
+      "name": "DebugHelper",
+      "type": "n8n-nodes-base.debugHelper",
+      "typeVersion": 1,
+      "position": [
+        1060,
+        600
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "25862d65-fba8-4dc9-bb92-6b2c55df07b7",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        840,
+        600
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking \"Execute Workflow\"": {
+      "main": [
+        [
+          {
+            "node": "DebugHelper",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 1,
+  "versionId": "6795bbf9-88a1-45b3-b080-96c9bbbe5a22",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

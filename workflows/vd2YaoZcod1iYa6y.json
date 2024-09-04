@@ -1,0 +1,27 @@
+{
+  "id": "vd2YaoZcod1iYa6y",
+  "name": "Instance owner wants to share",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "13620cfe-f0a9-4c8b-835c-59f661d68c95",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        640,
+        520
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "874ae282-0192-4a4b-8b41-d99945f63b21",
+  "owner": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "dnAlJ34dhuttzIP6",
+  "name": "Member wants to share",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "80adebd9-0b52-4087-9809-bb83ff115934",
+      "name": "When clicking \"Execute Workflow\"",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        560,
+        460
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "3da13662-025b-4896-9e15-a1cbaf8aff3b"
+}
