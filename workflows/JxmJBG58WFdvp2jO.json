@@ -1,0 +1,16 @@
+{
+  "id": "JxmJBG58WFdvp2jO",
+  "name": "My workflow 42",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "9ec7f6ec-760e-42e0-b0ab-ee485cc6efba",
+  "owner": {
+    "type": "team",
+    "teamId": "Ez7lVM435fyuJYBk",
+    "teamName": "🤙 emoji"
+  }
+}

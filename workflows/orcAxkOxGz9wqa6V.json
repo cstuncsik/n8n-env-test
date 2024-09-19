@@ -1,0 +1,28 @@
+{
+  "id": "orcAxkOxGz9wqa6V",
+  "name": "My workflow 43",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "b437b8c3-1060-48a5-9db2-10db8b5e86e2",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [
+        520,
+        500
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "c97208bd-83e9-4262-aa95-e53b9ee8cc20",
+  "owner": {
+    "type": "team",
+    "teamId": "M21XgKJsWGhBy121",
+    "teamName": "Test cross-sharing"
+  }
+}

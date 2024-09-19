@@ -1,0 +1,28 @@
+{
+  "id": "ekrIIOuZ0E8YnTQd",
+  "name": "My workflow 39",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "178d6301-abfa-48e5-a705-87ddaab0e632",
+      "name": "When clicking ‘Test workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        500
+      ]
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "aaad83c0-56da-48d4-bc58-30354b49cc7f",
+  "owner": {
+    "type": "team",
+    "teamId": "ExuBYnufY1IQ2HvF",
+    "teamName": "Marketing"
+  }
+}

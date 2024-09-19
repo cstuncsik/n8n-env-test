@@ -1,0 +1,13 @@
+{
+  "id": "QK320YQ2qnHmxDZ7",
+  "name": "Adalo account 4",
+  "type": "adaloApi",
+  "data": {
+    "apiKey": "",
+    "appId": ""
+  },
+  "ownedBy": {
+    "type": "personal",
+    "personalEmail": "csaba@n8n.io"
+  }
+}

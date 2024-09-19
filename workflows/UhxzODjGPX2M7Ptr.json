@@ -1,0 +1,16 @@
+{
+  "id": "UhxzODjGPX2M7Ptr",
+  "name": "My workflow 40",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "3f3a21d0-07b2-4069-ae6c-d39cf36fc717",
+  "owner": {
+    "type": "team",
+    "teamId": "7xTPWoAchXoqHUzF",
+    "teamName": "Test for viewer"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "v39AAlwuYffSl9ZR",
+  "name": "My workflow 41",
+  "nodes": [],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "5302afc7-8b6d-45bf-b552-b5cb74d7c8f0",
+  "owner": {
+    "type": "team",
+    "teamId": "ExuBYnufY1IQ2HvF",
+    "teamName": "Marketing"
+  }
+}
