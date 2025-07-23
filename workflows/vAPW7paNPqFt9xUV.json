@@ -1,0 +1,141 @@
+{
+  "id": "vAPW7paNPqFt9xUV",
+  "name": "My workflow 63",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Submit BBS application",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Application form",
+              "fieldType": "file",
+              "multipleFiles": false,
+              "acceptFileTypes": ".pdf",
+              "requiredField": true
+            }
+          ]
+        },
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        16
+      ],
+      "id": "704af134-afb1-4fa1-ba75-dacd479d0bc3",
+      "name": "On form submission",
+      "webhookId": "0897649c-9c62-4152-8fcc-8f2731d95e0d"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nreturn $('On form submission').all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        48,
+        448
+      ],
+      "id": "164d582c-47fd-4e21-9a73-0c729df647e6",
+      "name": "Code"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -240,
+        304
+      ],
+      "id": "2a22f204-46c6-4aad-81af-f210824bfffb",
+      "name": "When clicking ‘Test workflow’"
+    },
+    {
+      "parameters": {
+        "content": "### Error claims form node doesn't exist\nInterestingly the expression preview under the param has the correct error",
+        "height": 300,
+        "width": 220
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "a3556ed2-4209-41c9-9916-67ecdd509070",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "9c260756-a7ce-41ba-ad9b-0eb1ceeaf02b",
+              "name": "test",
+              "value": "={{ $('On form submission').item.json }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        48,
+        144
+      ],
+      "id": "50398809-4659-4a9f-9d38-4ffe938c261e",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "content": "### Problem rendering error, but also the wrong error \n(should be 'no path back to node')",
+        "height": 240,
+        "width": 220
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        320
+      ],
+      "typeVersion": 1,
+      "id": "7a0f81fb-645f-4ded-bcf3-82d8da557667",
+      "name": "Sticky Note1"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Test workflow’": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "3222b031-75ac-40d2-a99f-816a82360833",
+  "owner": {
+    "type": "personal",
+    "projectId": "xEtx6zIbfD2cYVF3",
+    "projectName": "Csaba Tuncsik <csaba@n8n.io>",
+    "personalEmail": "csaba@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}

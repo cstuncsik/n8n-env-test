@@ -47,6 +47,10 @@
     {
       "id": "7PbQyEzsuEVEkMFc",
       "name": "nutag"
+    },
+    {
+      "id": "50So2hPa3ZxMFyNW",
+      "name": "🛟 Customer Support"
     }
   ],
   "mappings": [
@@ -141,6 +145,14 @@
     {
       "workflowId": "oIbmFQEtN1KC454F",
       "tagId": 4
+    },
+    {
+      "workflowId": "g8objg7jfLS4dcEC",
+      "tagId": "50So2hPa3ZxMFyNW"
+    },
+    {
+      "workflowId": "mXfJ35xgiKlGqmeN",
+      "tagId": "50So2hPa3ZxMFyNW"
     }
   ]
 }
