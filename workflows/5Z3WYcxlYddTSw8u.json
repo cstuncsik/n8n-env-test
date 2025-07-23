@@ -1,0 +1,66 @@
+{
+  "id": "5Z3WYcxlYddTSw8u",
+  "name": "Just a waiter",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 10
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "bd945184-7b1a-4b6f-b862-113d875ae341",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "amount": 2
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "76cea5c2-0237-42e3-bbb0-6a0db9f00c03",
+      "name": "Wait",
+      "webhookId": "d7a88a20-df27-44b6-a8de-a974e8c56029"
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 1,
+  "versionId": "005150a6-af28-4525-b1de-7108befb2294",
+  "owner": {
+    "type": "personal",
+    "projectId": "xEtx6zIbfD2cYVF3",
+    "projectName": "Csaba Tuncsik <csaba@n8n.io>",
+    "personalEmail": "csaba@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
