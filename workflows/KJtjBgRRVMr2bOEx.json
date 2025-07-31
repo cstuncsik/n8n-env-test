@@ -15,6 +15,16 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "7c5718ac-4a13-4187-85d8-6a00105dfa95",
+              "name": "url",
+              "value": "http://google.com",
+              "type": "string"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.set",
@@ -25,6 +35,19 @@
       ],
       "id": "ec675243-db39-4452-bba7-c8701c022b23",
       "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        416,
+        0
+      ],
+      "id": "8e05b2ec-d22c-4563-bd93-5559465044aa",
+      "name": "HTTP Request"
     }
   ],
   "connections": {
@@ -38,13 +61,24 @@
           }
         ]
       ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "d790c320-0ea1-483d-bdab-219cf65e41a7",
+  "versionId": "69d08069-6e48-4f8e-b78b-9ec993c2e82d",
   "owner": {
     "type": "personal",
     "projectId": "xEtx6zIbfD2cYVF3",
