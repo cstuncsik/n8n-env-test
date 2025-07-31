@@ -38,6 +38,7 @@
     },
     {
       "parameters": {
+        "url": "={{ $json.url }}",
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
@@ -78,7 +79,7 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "69d08069-6e48-4f8e-b78b-9ec993c2e82d",
+  "versionId": "0cf1cceb-3a5b-4eea-bb90-2908f3ccdad1",
   "owner": {
     "type": "personal",
     "projectId": "xEtx6zIbfD2cYVF3",
