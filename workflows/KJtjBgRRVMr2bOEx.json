@@ -1,0 +1,56 @@
+{
+  "id": "KJtjBgRRVMr2bOEx",
+  "name": "For workflow diff",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "944e6154-d795-44fc-b155-06e82d5a4cd0",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "ec675243-db39-4452-bba7-c8701c022b23",
+      "name": "Edit Fields"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "d790c320-0ea1-483d-bdab-219cf65e41a7",
+  "owner": {
+    "type": "personal",
+    "projectId": "xEtx6zIbfD2cYVF3",
+    "projectName": "Csaba Tuncsik <csaba@n8n.io>",
+    "personalEmail": "csaba@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
