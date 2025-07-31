@@ -36,8 +36,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        192,
-        0
+        176,
+        -32
       ],
       "id": "ec675243-db39-4452-bba7-c8701c022b23",
       "name": "Edit Fields"
@@ -99,7 +99,7 @@
       "typeVersion": 3.2,
       "position": [
         176,
-        304
+        336
       ],
       "id": "99f9046b-c99c-4d06-bf7c-f67bba4a9d01",
       "name": "Switch"
@@ -111,11 +111,58 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        480,
-        336
+        496,
+        400
       ],
       "id": "9b77e5a4-c94b-4172-8cf0-c2cad9cee363",
       "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9797f687-445c-441d-8d9f-677aa92e9d86",
+              "leftValue": "={{ $json.domain }}",
+              "rightValue": "google.com",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        -112
+      ],
+      "id": "38d48399-da59-49d3-8008-0ed6f01fc3dc",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1056,
+        -128
+      ],
+      "id": "808616b4-1c2e-4c9f-99b6-8b992d20a23e",
+      "name": "Edit Fields2"
     }
   ],
   "connections": {
@@ -152,15 +199,32 @@
             "node": "Code",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
     },
     "Switch": {
       "main": [
+        [],
         [
           {
             "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields2",
             "type": "main",
             "index": 0
           }
@@ -172,7 +236,7 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "a72800d8-74c9-467d-bf98-5ee21f02c995",
+  "versionId": "64b53c56-a76a-4e9b-8084-28e13687d15a",
   "owner": {
     "type": "personal",
     "projectId": "xEtx6zIbfD2cYVF3",
