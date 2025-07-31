@@ -19,8 +19,14 @@
           "assignments": [
             {
               "id": "7c5718ac-4a13-4187-85d8-6a00105dfa95",
-              "name": "url",
-              "value": "http://google.com",
+              "name": "domain",
+              "value": "google.com",
+              "type": "string"
+            },
+            {
+              "id": "e03e00c2-124c-44cb-8ac1-119a27184210",
+              "name": "protocol",
+              "value": "http",
               "type": "string"
             }
           ]
@@ -30,7 +36,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
+        192,
         0
       ],
       "id": "ec675243-db39-4452-bba7-c8701c022b23",
@@ -38,17 +44,78 @@
     },
     {
       "parameters": {
-        "url": "={{ $json.url }}",
+        "url": "={{ $json.protocol }}://{{ $json.domain }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "x",
+              "value": "y"
+            }
+          ]
+        },
         "options": {}
       },
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        416,
-        0
+        496,
+        32
       ],
       "id": "8e05b2ec-d22c-4563-bd93-5559465044aa",
       "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        416,
+        176
+      ],
+      "id": "dbbd5aef-570b-4fe4-980d-e2b48c12e6b5",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nfor (const item of $input.all()) {\n  item.json.myNewField = 1;\n}\n\nreturn $input.all();"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        384,
+        -160
+      ],
+      "id": "e26d1a2b-dd02-4a49-b0ba-09ea9c920d21",
+      "name": "Code"
+    },
+    {
+      "parameters": {
+        "mode": "expression"
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        176,
+        304
+      ],
+      "id": "99f9046b-c99c-4d06-bf7c-f67bba4a9d01",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        480,
+        336
+      ],
+      "id": "9b77e5a4-c94b-4172-8cf0-c2cad9cee363",
+      "name": "Edit Fields1"
     }
   ],
   "connections": {
@@ -57,6 +124,11 @@
         [
           {
             "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
@@ -70,6 +142,27 @@
             "node": "HTTP Request",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -79,7 +172,7 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "0cf1cceb-3a5b-4eea-bb90-2908f3ccdad1",
+  "versionId": "a72800d8-74c9-467d-bf98-5ee21f02c995",
   "owner": {
     "type": "personal",
     "projectId": "xEtx6zIbfD2cYVF3",
