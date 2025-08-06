@@ -1,0 +1,36 @@
+{
+  "id": "2j55Bo3MlPwNtwD9",
+  "name": "SecOps",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "cc8e9101-4098-40cd-b9d1-101334bf16e9",
+      "name": "Schedule Trigger"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "ea1bf80e-5fe5-4b10-bc1c-08ba5792f6c4",
+  "owner": {
+    "type": "team",
+    "teamId": "0PaJr26ASqSmqWWq",
+    "teamName": "Security"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}

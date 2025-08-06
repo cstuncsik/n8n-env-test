@@ -1,0 +1,30 @@
+{
+  "id": "Xr4HjFZRPj5tD3PQ",
+  "name": "Endr",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "d39612d9-fb1b-4168-89e2-7baebff35b51",
+      "name": "When clicking ‘Execute workflow’"
+    }
+  ],
+  "connections": {},
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "41cc0f91-6d07-41ab-b06e-ea1b3625af7a",
+  "owner": {
+    "type": "team",
+    "teamId": "Rjg5gAharQiNGGQX",
+    "teamName": "Endre's project"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
