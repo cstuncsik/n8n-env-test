@@ -1,0 +1,74 @@
+{
+  "id": "UrcvogT7JkBilonB",
+  "name": "Windows workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c8022d28-474f-4004-8fdf-5a342d5d306d",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        208,
+        0
+      ],
+      "id": "ca412fd4-e049-4969-8f34-866bb8cd22db",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        256
+      ],
+      "id": "50bf3f2a-4137-460a-87e3-d7041a1795e3",
+      "name": "Edit Fields1"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "triggerCount": 0,
+  "versionId": "039916bf-3735-4be7-848e-321def5c9933",
+  "owner": {
+    "type": "personal",
+    "projectId": "5JWkPR3AIx1RLUJd",
+    "projectName": "Csaba Tuncsik <csaba@n8n.io>",
+    "personalEmail": "csaba@n8n.io"
+  },
+  "parentFolderId": null,
+  "isArchived": false
+}
