@@ -25,19 +25,6 @@
       ],
       "id": "ca412fd4-e049-4969-8f34-866bb8cd22db",
       "name": "Edit Fields"
-    },
-    {
-      "parameters": {
-        "options": {}
-      },
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        320,
-        256
-      ],
-      "id": "50bf3f2a-4137-460a-87e3-d7041a1795e3",
-      "name": "Edit Fields1"
     }
   ],
   "connections": {
@@ -46,11 +33,6 @@
         [
           {
             "node": "Edit Fields",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Edit Fields1",
             "type": "main",
             "index": 0
           }
@@ -62,7 +44,7 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "039916bf-3735-4be7-848e-321def5c9933",
+  "versionId": "e71b5b54-a14b-4d46-bf6e-bdf9e02e54ee",
   "owner": {
     "type": "personal",
     "projectId": "5JWkPR3AIx1RLUJd",
