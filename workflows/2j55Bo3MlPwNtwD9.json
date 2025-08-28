@@ -25,12 +25,12 @@
     "executionOrder": "v1"
   },
   "triggerCount": 0,
-  "versionId": "ea1bf80e-5fe5-4b10-bc1c-08ba5792f6c4",
+  "versionId": "44e5d561-3195-416a-97a8-1a4f83929db8",
   "owner": {
     "type": "team",
     "teamId": "0PaJr26ASqSmqWWq",
     "teamName": "Security"
   },
   "parentFolderId": null,
-  "isArchived": false
+  "isArchived": true
 }
